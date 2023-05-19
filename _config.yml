@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "HyunJung00asdff"
+title                    : "HyunJung00"
 title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "hyunjung"
@@ -284,7 +284,6 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: default
       author_profile: true
       read_time: true
       comments: true
