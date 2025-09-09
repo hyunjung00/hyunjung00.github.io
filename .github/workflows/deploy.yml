@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -21,10 +21,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node (LTS) with npm cache
+      - name: Setup Node (LTS) + npm cache
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
@@ -33,19 +32,13 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      # Compute VITE_BASE for user/org, custom-domain, or project page
       - name: Compute VITE_BASE
         id: base
         shell: bash
         run: |
           REPO_NAME="${GITHUB_REPOSITORY#*/}"
           CUSTOM_DOMAIN_ENV="${{ vars.PAGES_CUSTOM_DOMAIN }}"
-          if [ -f CNAME ]; then
-            CUSTOM_DOMAIN_FILE="$(tr -d '\r\n' < CNAME)"
-          else
-            CUSTOM_DOMAIN_FILE=""
-          fi
-
+          if [ -f CNAME ]; then CUSTOM_DOMAIN_FILE="$(tr -d '\r\n' < CNAME)"; else CUSTOM_DOMAIN_FILE=""; fi
           if echo "$REPO_NAME" | grep -qiE '\.github\.io$'; then
             VITE_BASE="/"
           elif [ -n "$CUSTOM_DOMAIN_ENV" ] || [ -n "$CUSTOM_DOMAIN_FILE" ]; then
@@ -53,7 +46,6 @@ jobs:
           else
             VITE_BASE="/${REPO_NAME}/"
           fi
-
           echo "VITE_BASE=$VITE_BASE" >> $GITHUB_ENV
           echo "Computed VITE_BASE=$VITE_BASE"
 
@@ -62,25 +54,17 @@ jobs:
         env:
           VITE_BASE: ${{ env.VITE_BASE }}
 
-      # BrowserRouter SPA fallback (keep this; remove if you switch to HashRouter)
       - name: SPA fallback (index -> 404.html)
         run: cp dist/index.html dist/404.html
 
       - name: Add .nojekyll
         run: touch dist/.nojekyll
 
-      # Optional: inject CNAME from repo variable (Settings → Secrets and variables → Variables)
       - name: Write CNAME from variable (optional)
         if: vars.PAGES_CUSTOM_DOMAIN != ''
         run: echo "${{ vars.PAGES_CUSTOM_DOMAIN }}" > dist/CNAME
 
-      # With Settings → Pages already set to “GitHub Actions”,
-      # configure-pages can stay; it won't need to create the site.
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
+      # Note: configure-pages is not required once Source=GitHub Actions is set
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
