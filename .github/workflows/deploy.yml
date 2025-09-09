@@ -14,39 +14,78 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+env:
+  CI: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node (LTS) with npm cache
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      # Compute VITE_BASE with user/org, custom domain, or project page logic
+      - name: Compute VITE_BASE
+        id: base
+        shell: bash
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          CUSTOM_DOMAIN_ENV="${{ vars.PAGES_CUSTOM_DOMAIN }}"
+          if [ -f CNAME ]; then
+            CUSTOM_DOMAIN_FILE="$(tr -d '\r\n' < CNAME)"
+          else
+            CUSTOM_DOMAIN_FILE=""
+          fi
+
+          if echo "$REPO_NAME" | grep -qiE '\.github\.io$'; then
+            VITE_BASE="/"
+          elif [ -n "$CUSTOM_DOMAIN_ENV" ] || [ -n "$CUSTOM_DOMAIN_FILE" ]; then
+            VITE_BASE="/"
+          else
+            VITE_BASE="/${REPO_NAME}/"
+          fi
+
+          echo "VITE_BASE=$VITE_BASE" >> $GITHUB_ENV
+          echo "Computed VITE_BASE=$VITE_BASE"
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_BASE: ${{ env.VITE_BASE }}
+
+      # SPA fallback (BrowserRouter): copy index.html to 404.html
+      - name: SPA fallback (index -> 404.html)
+        run: cp dist/index.html dist/404.html
+
+      # Prevent Jekyll from interfering with asset paths (e.g., leading underscores)
+      - name: Add .nojekyll
+        run: touch dist/.nojekyll
+
+      # Optionally inject CNAME from repo variable (Settings → Secrets and variables → Variables)
+      - name: Write CNAME from variable (optional)
+        if: vars.PAGES_CUSTOM_DOMAIN != ''
+        run: |
+          echo "${{ vars.PAGES_CUSTOM_DOMAIN }}" > dist/CNAME
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci || npm install
-      # Set VITE_BASE for project sites automatically using repo name.
-      # For user/org sites (username.github.io), GitHub repo name ends with .github.io; we'll use '/'.
-      - name: Compute VITE_BASE
-        id: base
-        run: |
-          REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          if echo "$REPO_NAME" | grep -qiE '\\.github\\.io$'; then
-            echo "VITE_BASE=/" >> $GITHUB_ENV
-          else
-            echo "VITE_BASE=/${REPO_NAME}/" >> $GITHUB_ENV
-          fi
-      - run: npm run build
-        env:
-          VITE_BASE: ${{ env.VITE_BASE }}
-      - name: SPA fallback (copy index.html to 404.html)
-        run: cp dist/index.html dist/404.html
-      - uses: actions/upload-pages-artifact@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
