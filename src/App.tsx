@@ -3,7 +3,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import {
+  BrowserRouter,
+  HashRouter,
+  Routes,
+  Route,
+  useParams,
+} from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { PublicationsPage } from "./pages/Publications";
@@ -38,31 +44,39 @@ function ExpDetail() {
   return <ExperienceDetailPage slug={slug} />;
 }
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      {/* basename ensures correct routing under / or /repo-name/ */}
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route
-            path="/publications"
-            element={<PublicationsPage publications={publications || []} />}
-          />
-          <Route path="/publications/:slug" element={<PubDetail />} />
-          <Route
-            path="/experience"
-            element={<ExperiencePage experiences={experiences || []} />}
-          />
-          <Route path="/experience/:slug" element={<ExpDetail />} />
-          {/* Keep this catch-all for SPA 404s */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  // Use HashRouter on GitHub Pages/project pages to ensure deep links work without server rewrites
+  const useHashRouter =
+    import.meta.env.PROD && import.meta.env.BASE_URL !== "/";
+  const RouterComponent = useHashRouter ? HashRouter : BrowserRouter;
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <RouterComponent
+          basename={useHashRouter ? undefined : import.meta.env.BASE_URL}
+        >
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route
+              path="/publications"
+              element={<PublicationsPage publications={publications || []} />}
+            />
+            <Route path="/publications/:slug" element={<PubDetail />} />
+            <Route
+              path="/experience"
+              element={<ExperiencePage experiences={experiences || []} />}
+            />
+            <Route path="/experience/:slug" element={<ExpDetail />} />
+            {/* Keep this catch-all for SPA 404s */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </RouterComponent>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

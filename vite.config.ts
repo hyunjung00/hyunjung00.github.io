@@ -7,7 +7,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
-    port: 8080,
+    port: 1234,
   },
   // '/' for user/org pages and custom domains, '/<repo>/' for project pages
   base: process.env.VITE_BASE || "/",

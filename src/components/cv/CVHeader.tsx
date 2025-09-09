@@ -1,6 +1,7 @@
 import { CVProfile } from '@/types/cv';
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ProfilePhoto } from '@/components/cv/ProfilePhoto';
 
 interface CVHeaderProps {
   profile: CVProfile;
@@ -72,13 +73,13 @@ export function CVHeader({ profile }: CVHeaderProps) {
         </div>
         
         <div className="flex flex-col gap-2 md:items-end">
-          {profile.avatar && (
-            <img
-              src={profile.avatar}
-              alt={`${profile.name} profile photo`}
-              className="w-24 h-24 rounded-full border-2 border-primary/20 object-cover"
-            />
-          )}
+          <ProfilePhoto
+            src={profile.avatar}
+            name={profile.name}
+            size="md"
+            rounded
+            border
+          />
           <Button
             onClick={handlePrint}
             variant="outline"

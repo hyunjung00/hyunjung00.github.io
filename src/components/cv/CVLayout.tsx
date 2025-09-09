@@ -23,7 +23,7 @@ export function CVLayout({ children, showNavigation = true }: CVLayoutProps) {
         </button>
       </div>
 
-      <main className="max-w-4xl mx-auto px-6 py-8 print:px-0 print:py-0">
+      <main className="max-w-6xl mx-auto px-6 py-8 print:px-0 print:py-0">
         {showNavigation && <Navigation className="mb-8" />}
         
         <article className="bg-card border border-border-light rounded-lg shadow-sm p-8 print:border-0 print:shadow-none print:rounded-none">

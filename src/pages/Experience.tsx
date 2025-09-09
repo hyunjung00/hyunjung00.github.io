@@ -1,32 +1,38 @@
-import { useState, useMemo } from 'react';
-import { Search, Filter, Calendar, Building } from 'lucide-react';
-import { DetailedExperience } from '@/types/content';
-import { ExperienceCard } from '@/components/experience/ExperienceCard';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
-import { Navigation } from '@/components/ui/Navigation';
-import Fuse from 'fuse.js';
+import { useState, useMemo } from "react";
+import { Search, Filter, Calendar, Building } from "lucide-react";
+import { DetailedExperience } from "@/types/content";
+import { ExperienceCard } from "@/components/experience/ExperienceCard";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { Navigation } from "@/components/ui/Navigation";
+import Fuse from "fuse.js";
 
 interface ExperiencePageProps {
   experiences: DetailedExperience[];
 }
 
 export function ExperiencePage({ experiences }: ExperiencePageProps) {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedOrg, setSelectedOrg] = useState<string>('all');
-  const [selectedPeriod, setSelectedPeriod] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedOrg, setSelectedOrg] = useState<string>("all");
+  const [selectedPeriod, setSelectedPeriod] = useState<string>("all");
 
   // Setup Fuse.js for fuzzy search
   const fuse = useMemo(() => {
     return new Fuse(experiences, {
       keys: [
-        { name: 'role', weight: 0.3 },
-        { name: 'organization', weight: 0.3 },
-        { name: 'description', weight: 0.2 },
-        { name: 'bullets', weight: 0.1 },
-        { name: 'technologies', weight: 0.1 }
+        { name: "role", weight: 0.3 },
+        { name: "organization", weight: 0.3 },
+        { name: "description", weight: 0.2 },
+        { name: "bullets", weight: 0.1 },
+        { name: "technologies", weight: 0.1 },
       ],
       threshold: 0.3,
     });
@@ -34,28 +40,30 @@ export function ExperiencePage({ experiences }: ExperiencePageProps) {
 
   // Get unique organizations
   const organizations = useMemo(() => {
-    const orgSet = new Set(experiences.map(e => e.organization));
+    const orgSet = new Set(experiences.map((e) => e.organization));
     return Array.from(orgSet).sort();
   }, [experiences]);
 
   // Define time periods
   const periods = [
-    { value: 'current', label: 'Current (2023-Present)' },
-    { value: 'recent', label: 'Recent (2020-2023)' },
-    { value: 'past', label: 'Past (Before 2020)' },
+    { value: "current", label: "Current (2023-Present)" },
+    { value: "recent", label: "Recent (2020-2023)" },
+    { value: "past", label: "Past (Before 2020)" },
   ];
 
   // Filter experiences by period
   const filterByPeriod = (experience: DetailedExperience, period: string) => {
-    const startYear = parseInt(experience.start_date.split('-')[0]);
-    const endYear = experience.end_date ? parseInt(experience.end_date.split('-')[0]) : new Date().getFullYear();
-    
+    const startYear = parseInt(experience.start_date.split("-")[0]);
+    const endYear = experience.end_date
+      ? parseInt(experience.end_date.split("-")[0])
+      : new Date().getFullYear();
+
     switch (period) {
-      case 'current':
+      case "current":
         return !experience.end_date || endYear >= 2023;
-      case 'recent':
+      case "recent":
         return startYear >= 2020 && startYear < 2023;
-      case 'past':
+      case "past":
         return startYear < 2020;
       default:
         return true;
@@ -67,18 +75,18 @@ export function ExperiencePage({ experiences }: ExperiencePageProps) {
     let result = experiences;
 
     // Apply filters
-    if (selectedOrg !== 'all') {
-      result = result.filter(e => e.organization === selectedOrg);
+    if (selectedOrg !== "all") {
+      result = result.filter((e) => e.organization === selectedOrg);
     }
-    if (selectedPeriod !== 'all') {
-      result = result.filter(e => filterByPeriod(e, selectedPeriod));
+    if (selectedPeriod !== "all") {
+      result = result.filter((e) => filterByPeriod(e, selectedPeriod));
     }
 
     // Apply search
     if (searchQuery.trim()) {
       const searchResults = fuse.search(searchQuery.trim());
-      const searchedItems = searchResults.map(result => result.item);
-      result = result.filter(e => searchedItems.includes(e));
+      const searchedItems = searchResults.map((result) => result.item);
+      result = result.filter((e) => searchedItems.includes(e));
     }
 
     // Sort by start date (newest first)
@@ -90,21 +98,24 @@ export function ExperiencePage({ experiences }: ExperiencePageProps) {
   }, [experiences, selectedOrg, selectedPeriod, searchQuery, fuse]);
 
   const clearFilters = () => {
-    setSearchQuery('');
-    setSelectedOrg('all');
-    setSelectedPeriod('all');
+    setSearchQuery("");
+    setSelectedOrg("all");
+    setSelectedPeriod("all");
   };
 
-  const hasActiveFilters = searchQuery || selectedOrg !== 'all' || selectedPeriod !== 'all';
+  const hasActiveFilters =
+    searchQuery || selectedOrg !== "all" || selectedPeriod !== "all";
 
   return (
     <div className="min-h-screen bg-background">
       <main className="max-w-6xl mx-auto px-6 py-8">
         <Navigation className="mb-8" />
-        <Breadcrumbs items={[{ label: 'Experience' }]} />
-        
+        <Breadcrumbs items={[{ label: "Experience" }]} />
+
         <header className="mb-8">
-          <h1 className="text-3xl font-bold text-heading mb-2">Professional Experience</h1>
+          <h1 className="text-3xl font-bold text-heading mb-2">
+            Professional Experience
+          </h1>
           <p className="text-body text-lg">
             Research positions and professional roles in AI and machine learning
           </p>
@@ -128,7 +139,9 @@ export function ExperiencePage({ experiences }: ExperiencePageProps) {
             {/* Filters */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <label className="text-sm font-medium text-heading mb-2 block">Organization</label>
+                <label className="text-sm font-medium text-heading mb-2 block">
+                  Organization
+                </label>
                 <Select value={selectedOrg} onValueChange={setSelectedOrg}>
                   <SelectTrigger>
                     <Building className="w-4 h-4 mr-2" />
@@ -136,7 +149,7 @@ export function ExperiencePage({ experiences }: ExperiencePageProps) {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">All organizations</SelectItem>
-                    {organizations.map(org => (
+                    {organizations.map((org) => (
                       <SelectItem key={org} value={org}>
                         {org}
                       </SelectItem>
@@ -146,15 +159,20 @@ export function ExperiencePage({ experiences }: ExperiencePageProps) {
               </div>
 
               <div>
-                <label className="text-sm font-medium text-heading mb-2 block">Time Period</label>
-                <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
+                <label className="text-sm font-medium text-heading mb-2 block">
+                  Time Period
+                </label>
+                <Select
+                  value={selectedPeriod}
+                  onValueChange={setSelectedPeriod}
+                >
                   <SelectTrigger>
                     <Calendar className="w-4 h-4 mr-2" />
                     <SelectValue placeholder="All periods" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">All periods</SelectItem>
-                    {periods.map(period => (
+                    {periods.map((period) => (
                       <SelectItem key={period.value} value={period.value}>
                         {period.label}
                       </SelectItem>
@@ -165,8 +183,8 @@ export function ExperiencePage({ experiences }: ExperiencePageProps) {
 
               <div className="flex items-end">
                 {hasActiveFilters && (
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     onClick={clearFilters}
                     className="w-full"
                   >
@@ -183,8 +201,9 @@ export function ExperiencePage({ experiences }: ExperiencePageProps) {
           {/* Results count */}
           <div className="flex items-center justify-between">
             <p className="text-caption">
-              Showing {filteredExperiences.length} of {experiences.length} positions
-              {hasActiveFilters && ' (filtered)'}
+              Showing {filteredExperiences.length} of {experiences.length}{" "}
+              positions
+              {hasActiveFilters && " (filtered)"}
             </p>
             <Button
               onClick={() => window.print()}
