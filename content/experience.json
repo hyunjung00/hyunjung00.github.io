@@ -1,0 +1,111 @@
+{
+  "experiences": [
+    {
+      "id": "samsung-research-senior-scientist-2023",
+      "slug": "senior-research-scientist-samsung-research-institute",
+      "organization": "Samsung Research Institute",
+      "role": "Senior Research Scientist",
+      "location": "Seoul, South Korea",
+      "start_date": "2023-03",
+      "supervisor": "Dr. Jane Kim, VP of AI Research",
+      "description": "Leading AI research initiatives focused on medical imaging solutions and healthcare applications. Responsible for driving innovation in deep learning models for clinical deployment and establishing research partnerships with medical institutions.",
+      "bullets": [
+        "Led development of AI-powered medical imaging solutions for early cancer detection",
+        "Collaborated with medical professionals to validate AI models in clinical settings",
+        "Published 3 papers in top-tier conferences (ICML, MICCAI, IEEE TMI)",
+        "Mentored 5 junior researchers and supervised 2 master's students",
+        "Established partnerships with 3 major hospitals for clinical validation studies",
+        "Secured $2.5M in research funding for medical AI projects"
+      ],
+      "achievements": [
+        "Developed cancer detection model with 94% accuracy, 15% improvement over existing methods",
+        "Led team that won Samsung's Innovation Award for Medical AI Solutions",
+        "Filed 4 patents in medical image analysis algorithms",
+        "Presented research findings at 8 international conferences"
+      ],
+      "technologies": ["PyTorch", "TensorFlow", "MONAI", "Docker", "Kubernetes", "MLflow", "DICOM", "ITK"],
+      "team_size": 12,
+      "budget": "$2.5M annually"
+    },
+    {
+      "id": "google-deepmind-research-intern-2022",
+      "slug": "research-intern-google-deepmind-health",
+      "organization": "Google DeepMind Health",
+      "role": "Research Intern",
+      "location": "London, UK",
+      "start_date": "2022-06",
+      "end_date": "2022-08",
+      "supervisor": "Dr. Mustafa Suleyman",
+      "description": "Summer research internship focusing on developing novel attention mechanisms for medical image segmentation. Worked within the Health team to advance state-of-the-art medical AI capabilities.",
+      "bullets": [
+        "Developed novel attention mechanisms for medical image segmentation",
+        "Improved model accuracy by 15% on benchmark datasets",
+        "Presented findings to senior research team and product stakeholders",
+        "Collaborated with clinical partners on model validation",
+        "Contributed to internal codebase and documentation"
+      ],
+      "achievements": [
+        "Invention disclosure filed for novel attention architecture",
+        "Internship project directly integrated into production system",
+        "Received outstanding internship performance rating",
+        "Invited to present at DeepMind's internal research symposium"
+      ],
+      "technologies": ["JAX", "Haiku", "TensorFlow", "BigQuery", "Vertex AI", "Cloud Storage"],
+      "team_size": 8
+    },
+    {
+      "id": "snu-graduate-research-assistant-2019",
+      "slug": "graduate-research-assistant-seoul-national-university-ai-lab",
+      "organization": "Seoul National University - AI Lab",
+      "role": "Graduate Research Assistant",
+      "location": "Seoul, South Korea",
+      "start_date": "2019-09",
+      "end_date": "2023-02",
+      "supervisor": "Prof. Dr. Chang-Su Kim",
+      "description": "Conducted doctoral research on federated learning for healthcare applications while serving as teaching assistant for graduate-level machine learning courses. Developed privacy-preserving algorithms for medical data analysis.",
+      "bullets": [
+        "Conducted research on federated learning for healthcare applications",
+        "Developed privacy-preserving algorithms for medical data analysis",
+        "Teaching assistant for Machine Learning and Computer Vision courses",
+        "Organized weekly research seminars and journal clubs",
+        "Mentored 6 undergraduate research students",
+        "Published 8 papers in top-tier venues during PhD"
+      ],
+      "achievements": [
+        "PhD dissertation awarded 'Outstanding Thesis' recognition",
+        "Google PhD Fellowship recipient (2021-2023)",
+        "Best Teaching Assistant Award - Computer Science Department",
+        "Organized successful ICML workshop on Medical AI (100+ attendees)",
+        "Developed federated learning framework adopted by 3 hospitals"
+      ],
+      "technologies": ["Python", "PyTorch", "TensorFlow", "PySyft", "Ray", "PostgreSQL", "Redis", "Linux"],
+      "team_size": 15
+    },
+    {
+      "id": "kaist-research-assistant-2017",
+      "slug": "research-assistant-kaist-electrical-engineering",
+      "organization": "KAIST - Electrical Engineering Department",
+      "role": "Research Assistant",
+      "location": "Daejeon, South Korea",
+      "start_date": "2017-09",
+      "end_date": "2019-06",
+      "supervisor": "Prof. Dr. Sungroh Yoon",
+      "description": "Master's research focused on CNN-based image classification for autonomous systems. Developed efficient neural network architectures for real-time processing in resource-constrained environments.",
+      "bullets": [
+        "Developed CNN architectures for autonomous vehicle perception",
+        "Optimized models for edge deployment and real-time inference",
+        "Collaborated with industry partners on autonomous driving projects",
+        "Published 3 conference papers on efficient neural networks",
+        "Teaching assistant for Digital Signal Processing course"
+      ],
+      "achievements": [
+        "Master's thesis received departmental excellence award",
+        "Developed mobile-optimized CNN achieving 25% speedup with comparable accuracy",
+        "Samsung Scholarship recipient for academic excellence",
+        "Contributed to open-source edge AI framework with 500+ GitHub stars"
+      ],
+      "technologies": ["Python", "TensorFlow", "OpenCV", "CUDA", "ARM NEON", "ROS", "C++"],
+      "team_size": 8
+    }
+  ]
+}
