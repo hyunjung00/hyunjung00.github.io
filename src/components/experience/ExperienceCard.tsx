@@ -1,5 +1,6 @@
 import { DetailedExperience } from "@/types/content";
 import { experienceUrl } from "@/lib/utils";
+import { Link } from "react-router-dom";
 import { MapPin, Calendar, User, Users, DollarSign } from "lucide-react";
 
 interface ExperienceCardProps {
@@ -36,12 +37,9 @@ export function ExperienceCard({
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div className="flex-1">
             <h3 className="text-lg font-semibold text-heading mb-1">
-              <a
-                href={experienceUrl(experience.slug)}
-                className="hover:text-primary transition-colors"
-              >
+              <Link to={experienceUrl(experience.slug)} className="hover:text-primary transition-colors">
                 {experience.role}
-              </a>
+              </Link>
             </h3>
             <p className="text-primary font-medium text-base">
               {experience.organization}

@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { homeUrl } from "@/lib/utils";
 import { ChevronRight, Home } from "lucide-react";
 
@@ -16,24 +17,17 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
     <nav aria-label="Breadcrumb" className="mb-6 no-print">
       <ol className="flex items-center space-x-2 text-sm text-caption">
         <li>
-          <a
-            href={homeUrl}
-            className="flex items-center hover:text-primary transition-colors"
-            aria-label="Home"
-          >
+          <Link to={homeUrl} className="flex items-center hover:text-primary transition-colors" aria-label="Home">
             <Home className="w-4 h-4" />
-          </a>
+          </Link>
         </li>
         {items.map((item, index) => (
           <li key={index} className="flex items-center space-x-2">
             <ChevronRight className="w-4 h-4" />
             {item.href ? (
-              <a
-                href={item.href}
-                className="hover:text-primary transition-colors"
-              >
+              <Link to={item.href} className="hover:text-primary transition-colors">
                 {item.label}
-              </a>
+              </Link>
             ) : (
               <span className="text-heading font-medium">{item.label}</span>
             )}

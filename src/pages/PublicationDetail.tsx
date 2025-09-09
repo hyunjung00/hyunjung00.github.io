@@ -5,6 +5,7 @@ import { publicationsUrl } from "@/lib/utils";
 import { Navigation } from "@/components/ui/Navigation";
 import { PublicationCard } from "@/components/publications/PublicationCard";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink, FileText, Award } from "lucide-react";
 import publicationsData from "../../content/publications.json";
 
@@ -49,7 +50,7 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
             The requested publication could not be found.
           </p>
           <Button asChild variant="outline">
-            <a href={publicationsUrl}>Back to Publications</a>
+            <Link to={publicationsUrl}>Back to Publications</Link>
           </Button>
         </div>
       </div>
@@ -74,7 +75,7 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <main className="max-w-4xl mx-auto px-6 py-8">
+      <main className="max-w-6xl mx-auto px-6 py-8">
         <Navigation className="mb-8" />
         <Breadcrumbs
           items={[
@@ -84,20 +85,20 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
         />
 
         {/* Back button */}
-        <div className="mb-6 no-print">
+        <div className="mb-8 no-print">
           <Button variant="outline" asChild>
-            <a
-              href={publicationsUrl}
+            <Link
+              to={publicationsUrl}
               className="inline-flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Publications
-            </a>
+            </Link>
           </Button>
         </div>
 
         {/* Publication details */}
-        <article className="bg-card border border-border-light rounded-lg p-8 print:border-0 print:shadow-none">
+        <article className="bg-card border border-border-light rounded-lg p-6 md:p-8 hover:shadow-md transition-shadow print:border-0 print:shadow-none">
           {/* Header */}
           <header className="mb-8">
             {publication.venue_type && (
@@ -119,11 +120,11 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
               </div>
             )}
 
-            <h1 className="text-3xl font-bold text-heading mb-4 leading-tight">
+            <h1 className="text-3xl font-bold text-heading mb-2 leading-tight">
               {publication.title}
             </h1>
 
-            <div className="space-y-3">
+            <div className="space-y-2">
               <div className="publication-authors text-lg">
                 {formatAuthors(publication.authors, publication.equal_contrib)}
                 {hasEqualContrib && (
@@ -133,7 +134,7 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
                 )}
               </div>
 
-              <div className="publication-venue text-lg">
+              <div className="publication-venue text-sm">
                 <span className="font-medium">{publication.venue}</span>,{" "}
                 {publication.year}
               </div>
@@ -154,7 +155,7 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
           {/* Abstract */}
           {publication.abstract && (
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-heading mb-3">
+              <h2 className="text-lg font-medium text-heading mb-2">
                 Abstract
               </h2>
               <p className="text-body leading-relaxed text-base">
@@ -166,7 +167,7 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
           {/* Keywords */}
           {publication.keywords && publication.keywords.length > 0 && (
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-heading mb-3">
+              <h2 className="text-lg font-medium text-heading mb-2">
                 Keywords
               </h2>
               <div className="flex flex-wrap gap-2">
@@ -185,7 +186,7 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
           {/* Links */}
           {publication.links.length > 0 && (
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-heading mb-3">
+              <h2 className="text-lg font-medium text-heading mb-2">
                 Resources
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -221,7 +222,7 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
           {/* Notes */}
           {publication.notes && (
             <section className="border-t border-border-light pt-6">
-              <h2 className="text-xl font-semibold text-heading mb-3">
+              <h2 className="text-lg font-medium text-heading mb-2">
                 Additional Notes
               </h2>
               <p className="text-body italic">{publication.notes}</p>
@@ -232,10 +233,10 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
           <div className="mt-8 pt-6 border-t border-border-light no-print">
             <div className="flex justify-between items-center">
               <Button variant="outline" asChild>
-                <a href={publicationsUrl}>
+                <Link to={publicationsUrl}>
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to Publications
-                </a>
+                </Link>
               </Button>
               <Button onClick={() => window.print()} variant="outline">
                 Print/PDF

@@ -1,5 +1,6 @@
 import { DetailedPublication } from "@/types/content";
 import { publicationUrl } from "@/lib/utils";
+import { Link } from "react-router-dom";
 import { ExternalLink, Award, FileText } from "lucide-react";
 
 interface PublicationCardProps {
@@ -81,12 +82,9 @@ export function PublicationCard({
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1">
             <h3 className="publication-title text-lg mb-2">
-              <a
-                href={publicationUrl(publication.slug)}
-                className="hover:text-primary transition-colors"
-              >
+              <Link to={publicationUrl(publication.slug)} className="hover:text-primary transition-colors">
                 {publication.title}
-              </a>
+              </Link>
             </h3>
             <div className="publication-authors text-sm mb-1">
               {formatAuthors(publication.authors, publication.equal_contrib)}

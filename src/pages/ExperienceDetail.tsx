@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { experienceIndexUrl } from "@/lib/utils";
 import { Navigation } from "@/components/ui/Navigation";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import {
   ArrowLeft,
   MapPin,
@@ -56,7 +57,7 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
             The requested experience could not be found.
           </p>
           <Button asChild variant="outline">
-            <a href={experienceIndexUrl}>Back to Experience</a>
+            <Link to={experienceIndexUrl}>Back to Experience</Link>
           </Button>
         </div>
       </div>
@@ -87,7 +88,7 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <main className="max-w-4xl mx-auto px-6 py-8">
+      <main className="max-w-6xl mx-auto px-6 py-8">
         <Navigation className="mb-8" />
         <Breadcrumbs
           items={[
@@ -97,20 +98,20 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
         />
 
         {/* Back button */}
-        <div className="mb-6 no-print">
+        <div className="mb-8 no-print">
           <Button variant="outline" asChild>
-            <a
-              href={experienceIndexUrl}
+            <Link
+              to={experienceIndexUrl}
               className="inline-flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Experience
-            </a>
+            </Link>
           </Button>
         </div>
 
         {/* Experience details */}
-        <article className="bg-card border border-border-light rounded-lg p-8 print:border-0 print:shadow-none">
+        <article className="bg-card border border-border-light rounded-lg p-6 md:p-8 hover:shadow-md transition-shadow print:border-0 print:shadow-none">
           {/* Header */}
           <header className="mb-8">
             <h1 className="text-3xl font-bold text-heading mb-2 leading-tight">
@@ -251,10 +252,10 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
           <div className="mt-8 pt-6 border-t border-border-light no-print">
             <div className="flex justify-between items-center">
               <Button variant="outline" asChild>
-                <a href={experienceIndexUrl}>
+                <Link to={experienceIndexUrl}>
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to Experience
-                </a>
+                </Link>
               </Button>
               <Button onClick={() => window.print()} variant="outline">
                 Print/PDF
