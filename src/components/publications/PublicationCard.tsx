@@ -1,5 +1,6 @@
-import { DetailedPublication } from '@/types/content';
-import { ExternalLink, Award, FileText } from 'lucide-react';
+import { DetailedPublication } from "@/types/content";
+import { publicationUrl } from "@/lib/utils";
+import { ExternalLink, Award, FileText } from "lucide-react";
 
 interface PublicationCardProps {
   publication: DetailedPublication;
@@ -9,22 +10,31 @@ interface PublicationCardProps {
 const VenueBadge = ({ venueType }: { venueType?: string }) => {
   const getVenueColor = (venue?: string) => {
     const colors: Record<string, string> = {
-      'MICCAI': 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
-      'ICML': 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
-      'ICLR': 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-      'NeurIPS': 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
-      'CVPR': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
-      'IEEE TMI': 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200',
-      'Nature': 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200',
-      'Science': 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200',
+      MICCAI: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+      ICML: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
+      ICLR: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+      NeurIPS: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
+      CVPR: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
+      "IEEE TMI":
+        "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200",
+      Nature: "bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200",
+      Science:
+        "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
     };
-    return colors[venue || ''] || 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200';
+    return (
+      colors[venue || ""] ||
+      "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
+    );
   };
 
   if (!venueType) return null;
 
   return (
-    <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getVenueColor(venueType)}`}>
+    <span
+      className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getVenueColor(
+        venueType
+      )}`}
+    >
       <Award className="w-3 h-3 mr-1" />
       {venueType}
     </span>
@@ -48,17 +58,21 @@ const formatAuthors = (authors: string[], equalContrib?: number[]) => {
   return authors.map((author, index) => {
     const isEqualContrib = equalContrib?.includes(index);
     return (
-      <span key={index} className={isEqualContrib ? 'equal-contrib' : ''}>
+      <span key={index} className={isEqualContrib ? "equal-contrib" : ""}>
         {author}
-        {isEqualContrib && '*'}
-        {index < authors.length - 1 && ', '}
+        {isEqualContrib && "*"}
+        {index < authors.length - 1 && ", "}
       </span>
     );
   });
 };
 
-export function PublicationCard({ publication, showAbstract = false }: PublicationCardProps) {
-  const hasEqualContrib = publication.equal_contrib && publication.equal_contrib.length > 0;
+export function PublicationCard({
+  publication,
+  showAbstract = false,
+}: PublicationCardProps) {
+  const hasEqualContrib =
+    publication.equal_contrib && publication.equal_contrib.length > 0;
 
   return (
     <article className="bg-card border border-border-light rounded-lg p-6 hover:shadow-md transition-shadow">
@@ -68,7 +82,7 @@ export function PublicationCard({ publication, showAbstract = false }: Publicati
           <div className="flex-1">
             <h3 className="publication-title text-lg mb-2">
               <a
-                href={`/publications/${publication.slug}`}
+                href={publicationUrl(publication.slug)}
                 className="hover:text-primary transition-colors"
               >
                 {publication.title}
@@ -77,7 +91,9 @@ export function PublicationCard({ publication, showAbstract = false }: Publicati
             <div className="publication-authors text-sm mb-1">
               {formatAuthors(publication.authors, publication.equal_contrib)}
               {hasEqualContrib && (
-                <span className="text-xs text-caption ml-1">(*equal contribution)</span>
+                <span className="text-xs text-caption ml-1">
+                  (*equal contribution)
+                </span>
               )}
             </div>
           </div>
@@ -86,12 +102,17 @@ export function PublicationCard({ publication, showAbstract = false }: Publicati
 
         {/* Publication details */}
         <div className="publication-venue text-sm">
-          <span className="font-medium">{publication.venue}</span>, {publication.year}
+          <span className="font-medium">{publication.venue}</span>,{" "}
+          {publication.year}
           {publication.impact_factor && (
-            <span className="text-caption ml-2">• IF: {publication.impact_factor}</span>
+            <span className="text-caption ml-2">
+              • IF: {publication.impact_factor}
+            </span>
           )}
           {publication.citation_count && (
-            <span className="text-caption ml-2">• {publication.citation_count} citations</span>
+            <span className="text-caption ml-2">
+              • {publication.citation_count} citations
+            </span>
           )}
         </div>
 

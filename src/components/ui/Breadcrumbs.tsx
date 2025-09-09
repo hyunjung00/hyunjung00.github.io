@@ -1,5 +1,6 @@
-import { ReactNode } from 'react';
-import { ChevronRight, Home } from 'lucide-react';
+import { ReactNode } from "react";
+import { homeUrl } from "@/lib/utils";
+import { ChevronRight, Home } from "lucide-react";
 
 interface BreadcrumbItem {
   label: string;
@@ -16,7 +17,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
       <ol className="flex items-center space-x-2 text-sm text-caption">
         <li>
           <a
-            href="/"
+            href={homeUrl}
             className="flex items-center hover:text-primary transition-colors"
             aria-label="Home"
           >

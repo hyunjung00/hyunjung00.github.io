@@ -1,5 +1,6 @@
-import { DetailedExperience } from '@/types/content';
-import { MapPin, Calendar, User, Users, DollarSign } from 'lucide-react';
+import { DetailedExperience } from "@/types/content";
+import { experienceUrl } from "@/lib/utils";
+import { MapPin, Calendar, User, Users, DollarSign } from "lucide-react";
 
 interface ExperienceCardProps {
   experience: DetailedExperience;
@@ -7,7 +8,7 @@ interface ExperienceCardProps {
 }
 
 const formatDateRange = (startDate: string, endDate?: string) => {
-  return `${startDate} - ${endDate || 'Present'}`;
+  return `${startDate} - ${endDate || "Present"}`;
 };
 
 const calculateDuration = (startDate: string, endDate?: string) => {
@@ -17,14 +18,17 @@ const calculateDuration = (startDate: string, endDate?: string) => {
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   const years = Math.floor(diffDays / 365);
   const months = Math.floor((diffDays % 365) / 30);
-  
+
   if (years > 0) {
     return months > 0 ? `${years}y ${months}m` : `${years}y`;
   }
   return `${months}m`;
 };
 
-export function ExperienceCard({ experience, showDescription = false }: ExperienceCardProps) {
+export function ExperienceCard({
+  experience,
+  showDescription = false,
+}: ExperienceCardProps) {
   return (
     <article className="bg-card border border-border-light rounded-lg p-6 hover:shadow-md transition-shadow">
       <div className="space-y-4">
@@ -33,13 +37,15 @@ export function ExperienceCard({ experience, showDescription = false }: Experien
           <div className="flex-1">
             <h3 className="text-lg font-semibold text-heading mb-1">
               <a
-                href={`/experience/${experience.slug}`}
+                href={experienceUrl(experience.slug)}
                 className="hover:text-primary transition-colors"
               >
                 {experience.role}
               </a>
             </h3>
-            <p className="text-primary font-medium text-base">{experience.organization}</p>
+            <p className="text-primary font-medium text-base">
+              {experience.organization}
+            </p>
             <div className="flex flex-wrap gap-4 mt-2 text-sm text-caption">
               {experience.location && (
                 <span className="flex items-center gap-1">
@@ -55,7 +61,7 @@ export function ExperienceCard({ experience, showDescription = false }: Experien
               )}
             </div>
           </div>
-          
+
           <div className="text-right">
             <div className="flex items-center gap-1 text-heading font-medium mb-1">
               <Calendar className="w-4 h-4 text-primary" />
@@ -69,9 +75,7 @@ export function ExperienceCard({ experience, showDescription = false }: Experien
 
         {/* Description */}
         {showDescription && experience.description && (
-          <div className="text-body">
-            {experience.description}
-          </div>
+          <div className="text-body">{experience.description}</div>
         )}
 
         {/* Key metrics */}
@@ -111,7 +115,9 @@ export function ExperienceCard({ experience, showDescription = false }: Experien
 
         {/* Key bullets (first 3) */}
         <div className="space-y-2">
-          <h4 className="text-sm font-medium text-heading">Key Responsibilities:</h4>
+          <h4 className="text-sm font-medium text-heading">
+            Key Responsibilities:
+          </h4>
           <ul className="space-y-1">
             {experience.bullets.slice(0, 3).map((bullet, index) => (
               <li
@@ -132,7 +138,9 @@ export function ExperienceCard({ experience, showDescription = false }: Experien
         {/* Top achievements */}
         {experience.achievements && experience.achievements.length > 0 && (
           <div className="border-t border-border-light pt-3">
-            <h4 className="text-sm font-medium text-heading mb-2">Key Achievements:</h4>
+            <h4 className="text-sm font-medium text-heading mb-2">
+              Key Achievements:
+            </h4>
             <ul className="space-y-1">
               {experience.achievements.slice(0, 2).map((achievement, index) => (
                 <li

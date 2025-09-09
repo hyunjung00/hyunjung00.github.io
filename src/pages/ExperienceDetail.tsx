@@ -1,10 +1,19 @@
-import { DetailedExperience } from '@/types/content';
-import { validateExperience } from '@/lib/contentValidation';
-import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
-import { Navigation } from '@/components/ui/Navigation';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft, MapPin, Calendar, User, Users, DollarSign, Star } from 'lucide-react';
-import experienceData from '../../content/experience.json';
+import { DetailedExperience } from "@/types/content";
+import { validateExperience } from "@/lib/contentValidation";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { experienceIndexUrl } from "@/lib/utils";
+import { Navigation } from "@/components/ui/Navigation";
+import { Button } from "@/components/ui/button";
+import {
+  ArrowLeft,
+  MapPin,
+  Calendar,
+  User,
+  Users,
+  DollarSign,
+  Star,
+} from "lucide-react";
+import experienceData from "../../content/experience.json";
 
 interface ExperienceDetailPageProps {
   slug: string;
@@ -17,13 +26,16 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
     const validatedData = validateExperience(experienceData);
     experiences = validatedData.experiences;
   } catch (error) {
-    console.error('Failed to load experience:', error);
+    console.error("Failed to load experience:", error);
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center max-w-md">
-          <h1 className="text-2xl font-bold text-destructive mb-4">Experience Data Error</h1>
+          <h1 className="text-2xl font-bold text-destructive mb-4">
+            Experience Data Error
+          </h1>
           <p className="text-body mb-4">
-            There was an error loading the experience data. Please check the content/experience.json file.
+            There was an error loading the experience data. Please check the
+            content/experience.json file.
           </p>
         </div>
       </div>
@@ -31,18 +43,20 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
   }
 
   // Find the experience by slug
-  const experience = experiences.find(e => e.slug === slug);
+  const experience = experiences.find((e) => e.slug === slug);
 
   if (!experience) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center max-w-md">
-          <h1 className="text-2xl font-bold text-heading mb-4">Experience Not Found</h1>
+          <h1 className="text-2xl font-bold text-heading mb-4">
+            Experience Not Found
+          </h1>
           <p className="text-body mb-4">
             The requested experience could not be found.
           </p>
           <Button asChild variant="outline">
-            <a href="/experience">Back to Experience</a>
+            <a href={experienceIndexUrl}>Back to Experience</a>
           </Button>
         </div>
       </div>
@@ -50,7 +64,7 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
   }
 
   const formatDateRange = (startDate: string, endDate?: string) => {
-    return `${startDate} - ${endDate || 'Present'}`;
+    return `${startDate} - ${endDate || "Present"}`;
   };
 
   const calculateDuration = (startDate: string, endDate?: string) => {
@@ -60,11 +74,15 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     const years = Math.floor(diffDays / 365);
     const months = Math.floor((diffDays % 365) / 30);
-    
+
     if (years > 0) {
-      return months > 0 ? `${years} year${years > 1 ? 's' : ''}, ${months} month${months > 1 ? 's' : ''}` : `${years} year${years > 1 ? 's' : ''}`;
+      return months > 0
+        ? `${years} year${years > 1 ? "s" : ""}, ${months} month${
+            months > 1 ? "s" : ""
+          }`
+        : `${years} year${years > 1 ? "s" : ""}`;
     }
-    return `${months} month${months > 1 ? 's' : ''}`;
+    return `${months} month${months > 1 ? "s" : ""}`;
   };
 
   return (
@@ -73,15 +91,18 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
         <Navigation className="mb-8" />
         <Breadcrumbs
           items={[
-            { label: 'Experience', href: '/experience' },
-            { label: `${experience.role} at ${experience.organization}` }
-          ]} 
+            { label: "Experience", href: experienceIndexUrl },
+            { label: `${experience.role} at ${experience.organization}` },
+          ]}
         />
 
         {/* Back button */}
         <div className="mb-6 no-print">
           <Button variant="outline" asChild>
-            <a href="/experience" className="inline-flex items-center gap-2">
+            <a
+              href={experienceIndexUrl}
+              className="inline-flex items-center gap-2"
+            >
               <ArrowLeft className="w-4 h-4" />
               Back to Experience
             </a>
@@ -98,7 +119,7 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
             <h2 className="text-2xl text-primary font-medium mb-4">
               {experience.organization}
             </h2>
-            
+
             {/* Meta information */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-caption">
               <div className="space-y-2">
@@ -109,10 +130,17 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-4" />
-                  <span className="text-sm">({calculateDuration(experience.start_date, experience.end_date)})</span>
+                  <span className="text-sm">
+                    (
+                    {calculateDuration(
+                      experience.start_date,
+                      experience.end_date
+                    )}
+                    )
+                  </span>
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 {experience.location && (
                   <div className="flex items-center gap-2">
@@ -155,7 +183,9 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
           {/* Description */}
           {experience.description && (
             <section className="mb-8">
-              <h3 className="text-xl font-semibold text-heading mb-3">Overview</h3>
+              <h3 className="text-xl font-semibold text-heading mb-3">
+                Overview
+              </h3>
               <p className="text-body leading-relaxed text-base">
                 {experience.description}
               </p>
@@ -165,7 +195,9 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
           {/* Technologies */}
           {experience.technologies && experience.technologies.length > 0 && (
             <section className="mb-8">
-              <h3 className="text-xl font-semibold text-heading mb-3">Technologies & Tools</h3>
+              <h3 className="text-xl font-semibold text-heading mb-3">
+                Technologies & Tools
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {experience.technologies.map((tech, index) => (
                   <span
@@ -181,7 +213,9 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
 
           {/* Responsibilities */}
           <section className="mb-8">
-            <h3 className="text-xl font-semibold text-heading mb-3">Key Responsibilities</h3>
+            <h3 className="text-xl font-semibold text-heading mb-3">
+              Key Responsibilities
+            </h3>
             <ul className="space-y-3">
               {experience.bullets.map((bullet, index) => (
                 <li
@@ -197,7 +231,9 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
           {/* Achievements */}
           {experience.achievements && experience.achievements.length > 0 && (
             <section className="mb-8">
-              <h3 className="text-xl font-semibold text-heading mb-3">Key Achievements</h3>
+              <h3 className="text-xl font-semibold text-heading mb-3">
+                Key Achievements
+              </h3>
               <ul className="space-y-3">
                 {experience.achievements.map((achievement, index) => (
                   <li
@@ -215,7 +251,7 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
           <div className="mt-8 pt-6 border-t border-border-light no-print">
             <div className="flex justify-between items-center">
               <Button variant="outline" asChild>
-                <a href="/experience">
+                <a href={experienceIndexUrl}>
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to Experience
                 </a>
