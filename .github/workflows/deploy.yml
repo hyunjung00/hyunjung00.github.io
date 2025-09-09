@@ -33,7 +33,7 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      # Compute VITE_BASE with user/org, custom domain, or project page logic
+      # Compute VITE_BASE for user/org, custom-domain, or project page
       - name: Compute VITE_BASE
         id: base
         shell: bash
@@ -62,20 +62,20 @@ jobs:
         env:
           VITE_BASE: ${{ env.VITE_BASE }}
 
-      # SPA fallback (BrowserRouter): copy index.html to 404.html
+      # BrowserRouter SPA fallback (keep this; remove if you switch to HashRouter)
       - name: SPA fallback (index -> 404.html)
         run: cp dist/index.html dist/404.html
 
-      # Prevent Jekyll from interfering with asset paths (e.g., leading underscores)
       - name: Add .nojekyll
         run: touch dist/.nojekyll
 
-      # Optionally inject CNAME from repo variable (Settings → Secrets and variables → Variables)
+      # Optional: inject CNAME from repo variable (Settings → Secrets and variables → Variables)
       - name: Write CNAME from variable (optional)
         if: vars.PAGES_CUSTOM_DOMAIN != ''
-        run: |
-          echo "${{ vars.PAGES_CUSTOM_DOMAIN }}" > dist/CNAME
+        run: echo "${{ vars.PAGES_CUSTOM_DOMAIN }}" > dist/CNAME
 
+      # With Settings → Pages already set to “GitHub Actions”,
+      # configure-pages can stay; it won't need to create the site.
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
