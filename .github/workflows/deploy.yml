@@ -1,0 +1,99 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  CI: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node (LTS) + npm cache
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      # Compute base path:
+      # - user/org repo (ends with .github.io) -> '/'
+      # - custom domain (var or CNAME)        -> '/'
+      # - project page                         -> '/<repo>/'
+      - name: Compute VITE_BASE
+        id: base
+        shell: bash
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          CUSTOM_DOMAIN_ENV="${{ vars.PAGES_CUSTOM_DOMAIN }}"
+          if [ -f CNAME ]; then
+            CUSTOM_DOMAIN_FILE="$(tr -d '\r\n' < CNAME)"
+          else
+            CUSTOM_DOMAIN_FILE=""
+          fi
+
+          if echo "$REPO_NAME" | grep -qiE '\.github\.io$'; then
+            VITE_BASE="/"
+          elif [ -n "$CUSTOM_DOMAIN_ENV" ] || [ -n "$CUSTOM_DOMAIN_FILE" ]; then
+            VITE_BASE="/"
+          else
+            VITE_BASE="/${REPO_NAME}/"
+          fi
+
+          echo "VITE_BASE=$VITE_BASE" >> $GITHUB_ENV
+          echo "Computed VITE_BASE=$VITE_BASE"
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_BASE: ${{ env.VITE_BASE }}
+
+      # SPA fallback (BrowserRouter). Remove if you switch to HashRouter.
+      - name: SPA fallback (index -> 404.html)
+        run: cp dist/index.html dist/404.html
+
+      - name: Add .nojekyll
+        run: touch dist/.nojekyll
+
+      # Optional: write CNAME from repo variable (Settings → Secrets and variables → Variables)
+      - name: Write CNAME (optional)
+        if: vars.PAGES_CUSTOM_DOMAIN != ''
+        run: echo "${{ vars.PAGES_CUSTOM_DOMAIN }}" > dist/CNAME
+
+      # Enable Pages via API (Option A)
+      - name: Configure Pages (enable if needed)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

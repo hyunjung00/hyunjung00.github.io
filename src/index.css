@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Academic CV Design System */
+
+@layer base {
+  :root {
+    /* Core Academic Palette */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 12%;
+    
+    /* Professional Blues */
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-muted: 210 60% 92%;
+    
+    /* Academic Grays */
+    --secondary: 215 15% 95%;
+    --secondary-foreground: 215 25% 25%;
+    --muted: 215 15% 97%;
+    --muted-foreground: 215 15% 45%;
+    
+    /* Professional Accents */
+    --accent: 210 80% 96%;
+    --accent-foreground: 210 100% 35%;
+    --border: 215 20% 90%;
+    --border-light: 215 20% 95%;
+    
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 12%;
+    --surface: 215 15% 98%;
+    
+    /* Interactive States */
+    --hover: 210 60% 96%;
+    --ring: 210 100% 45%;
+    
+    /* Typography Hierarchy */
+    --heading: 215 30% 8%;
+    --body: 215 20% 15%;
+    --caption: 215 15% 50%;
+    
+    /* Print Optimizations */
+    --print-border: 0 0% 70%;
+    --print-text: 0 0% 0%;
+    
+    /* Spacing & Layout */
+    --section-spacing: 3rem;
+    --content-max-width: 56rem;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Academic Theme */
+    --background: 215 30% 6%;
+    --foreground: 215 15% 92%;
+    
+    --primary: 210 100% 60%;
+    --primary-foreground: 215 30% 6%;
+    --primary-muted: 210 60% 15%;
+    
+    --secondary: 215 25% 12%;
+    --secondary-foreground: 215 15% 85%;
+    --muted: 215 25% 10%;
+    --muted-foreground: 215 15% 65%;
+    
+    --accent: 210 60% 15%;
+    --accent-foreground: 210 100% 70%;
+    --border: 215 25% 18%;
+    --border-light: 215 25% 20%;
+    
+    --card: 215 25% 8%;
+    --card-foreground: 215 15% 92%;
+    --surface: 215 25% 9%;
+    
+    --hover: 210 60% 12%;
+    --ring: 210 100% 60%;
+    
+    --heading: 215 15% 95%;
+    --body: 215 15% 88%;
+    --caption: 215 15% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-body font-inter;
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-heading font-medium;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  /* Academic CV Specific Styles */
+  .cv-section {
+    @apply mb-8 print:mb-6;
+  }
+  
+  .cv-heading {
+    @apply text-xl font-semibold text-heading mb-4 pb-2 border-b border-border-light;
+  }
+  
+  .cv-subheading {
+    @apply text-lg font-medium text-heading mb-2;
+  }
+  
+  .cv-meta {
+    @apply text-sm text-caption;
+  }
+  
+  .cv-content {
+    @apply text-body leading-relaxed;
+  }
+  
+  .publication-authors {
+    @apply text-body;
+  }
+  
+  .publication-title {
+    @apply font-medium text-heading;
+  }
+  
+  .publication-venue {
+    @apply text-accent-foreground italic;
+  }
+  
+  .equal-contrib {
+    @apply text-primary font-medium;
+  }
+}
+
+@layer utilities {
+  /* Print Optimizations */
+  @media print {
+    * {
+      @apply text-print-text;
+    }
+    
+    .no-print {
+      display: none !important;
+    }
+    
+    .cv-section {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    
+    .cv-heading {
+      @apply border-print-border;
+    }
+    
+    body {
+      @apply text-sm leading-normal;
+    }
+    
+    .print-break {
+      page-break-before: always;
+    }
+    
+    a {
+      @apply text-print-text no-underline;
+    }
+    
+    .external-link-icon {
+      display: none !important;
+    }
+  }
+}

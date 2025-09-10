@@ -1,0 +1,157 @@
+{
+  "name": "Hyun Jung Lee",
+  "role": "Research Scientist & AI Engineer",
+  "location": "Seoul, South Korea",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "hyunjung.lee@example.edu",
+      "label": "Academic Email"
+    },
+    {
+      "type": "phone",
+      "value": "+82-10-1234-5678"
+    },
+    {
+      "type": "linkedin",
+      "value": "hyunjung-lee",
+      "url": "https://linkedin.com/in/hyunjung-lee",
+      "label": "LinkedIn Profile"
+    },
+    {
+      "type": "website",
+      "value": "https://hyunjunglee.dev",
+      "label": "Personal Website"
+    },
+    {
+      "type": "address",
+      "value": "Seoul National University, Computer Science Department"
+    }
+  ],
+  "profile_summary": "Research scientist specializing in machine learning and computer vision with a focus on medical image analysis. Experienced in developing deep learning models for healthcare applications and published researcher in top-tier AI conferences. Passionate about bridging the gap between academic research and practical applications in medical AI.",
+  "publications": [
+    {
+      "authors": ["Hyun Jung Lee", "Sarah Kim", "Michael Chen"],
+      "year": 2024,
+      "title": "Deep Learning Approaches for Automated Medical Image Segmentation in Radiology",
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal",
+      "equal_contrib": [0, 1],
+      "link": "https://doi.org/10.1109/TMI.2024.example",
+      "notes": "Impact Factor: 10.6"
+    },
+    {
+      "authors": ["Sarah Kim", "Hyun Jung Lee", "Dr. Robert Park"],
+      "year": 2023,
+      "title": "Multi-Modal Learning for Early Disease Detection in Medical Imaging",
+      "venue": "International Conference on Machine Learning (ICML)",
+      "type": "conference",
+      "link": "https://proceedings.mlr.press/v202/kim23a.html"
+    },
+    {
+      "authors": ["Hyun Jung Lee", "Anna Zhang", "Dr. James Wilson"],
+      "year": 2023,
+      "title": "Federated Learning Framework for Privacy-Preserving Healthcare AI",
+      "venue": "Medical Image Computing and Computer Assisted Intervention (MICCAI)",
+      "type": "conference",
+      "link": "https://link.springer.com/chapter/10.1007/978-3-031-example"
+    },
+    {
+      "authors": ["Michael Chen", "Hyun Jung Lee"],
+      "year": 2022,
+      "title": "Attention Mechanisms in Medical Image Analysis: A Comprehensive Survey",
+      "venue": "ACM Computing Surveys",
+      "type": "journal",
+      "equal_contrib": [0, 1],
+      "notes": "Survey paper, 150+ citations"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Seoul National University",
+      "degree": "Ph.D.",
+      "field": "Computer Science",
+      "year": 2023,
+      "gpa": "4.2/4.3",
+      "location": "Seoul, South Korea",
+      "thesis": "Advanced Deep Learning Techniques for Medical Image Analysis and Diagnosis",
+      "advisor": "Prof. Dr. Chang-Su Kim",
+      "interests": ["Machine Learning", "Computer Vision", "Medical AI", "Deep Learning"]
+    },
+    {
+      "institution": "KAIST",
+      "degree": "M.S.",
+      "field": "Electrical Engineering",
+      "year": 2019,
+      "gpa": "4.1/4.3",
+      "location": "Daejeon, South Korea",
+      "thesis": "CNN-based Image Classification for Autonomous Systems",
+      "advisor": "Prof. Dr. Sungroh Yoon"
+    },
+    {
+      "institution": "Yonsei University",
+      "degree": "B.S.",
+      "field": "Computer Science",
+      "year": 2017,
+      "gpa": "3.9/4.3",
+      "location": "Seoul, South Korea",
+      "interests": ["Software Engineering", "Algorithms", "Data Structures"]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Senior Research Scientist",
+      "organization": "Samsung Research Institute",
+      "location": "Seoul, South Korea",
+      "start_date": "2023-03",
+      "bullets": [
+        "Led development of AI-powered medical imaging solutions for early cancer detection",
+        "Collaborated with medical professionals to validate AI models in clinical settings",
+        "Published 3 papers in top-tier conferences (ICML, MICCAI, IEEE TMI)",
+        "Mentored 5 junior researchers and supervised 2 master's students"
+      ],
+      "supervisor": "Dr. Jane Kim, VP of AI Research"
+    },
+    {
+      "title": "Research Intern",
+      "organization": "Google DeepMind Health",
+      "location": "London, UK",
+      "start_date": "2022-06",
+      "end_date": "2022-08",
+      "bullets": [
+        "Developed novel attention mechanisms for medical image segmentation",
+        "Improved model accuracy by 15% on benchmark datasets",
+        "Presented findings to senior research team and product stakeholders"
+      ],
+      "supervisor": "Dr. Mustafa Suleyman"
+    },
+    {
+      "title": "Graduate Research Assistant",
+      "organization": "Seoul National University - AI Lab",
+      "location": "Seoul, South Korea",
+      "start_date": "2019-09",
+      "end_date": "2023-02",
+      "bullets": [
+        "Conducted research on federated learning for healthcare applications",
+        "Developed privacy-preserving algorithms for medical data analysis",
+        "Teaching assistant for Machine Learning and Computer Vision courses",
+        "Organized weekly research seminars and journal clubs"
+      ],
+      "supervisor": "Prof. Dr. Chang-Su Kim"
+    }
+  ],
+  "skills": [
+    "Python", "TensorFlow", "PyTorch", "OpenCV", "scikit-learn", "Docker", "Kubernetes", "Git", "Linux", "SQL"
+  ],
+  "awards": [
+    "Best Paper Award - MICCAI 2023",
+    "Google PhD Fellowship in Machine Learning - 2021",
+    "Samsung Scholarship for Graduate Studies - 2019-2023",
+    "Dean's List - Yonsei University (2015-2017)"
+  ],
+  "languages": [
+    "Korean (Native)",
+    "English (Fluent)",
+    "Japanese (Conversational)"
+  ]
+}
