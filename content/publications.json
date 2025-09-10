@@ -1,139 +1,73 @@
 {
   "publications": [
     {
-      "id": "deep-learning-medical-segmentation-2024",
-      "slug": "deep-learning-approaches-for-automated-medical-image-segmentation-in-radiology",
-      "title": "Deep Learning Approaches for Automated Medical Image Segmentation in Radiology",
-      "authors": ["Hyun Jung Lee", "Sarah Kim", "Michael Chen"],
-      "year": 2024,
-      "venue": "IEEE Transactions on Medical Imaging",
-      "type": "journal",
-      "venue_type": "IEEE TMI",
-      "equal_contrib": [0, 1],
-      "impact_factor": "10.6",
-      "citation_count": 45,
-      "abstract": "This paper presents novel deep learning approaches for automated medical image segmentation in radiology, focusing on multi-organ segmentation in CT and MRI scans. Our method combines attention mechanisms with residual connections to achieve state-of-the-art performance on benchmark datasets while maintaining computational efficiency suitable for clinical deployment.",
-      "keywords": ["medical image segmentation", "deep learning", "attention mechanisms", "radiology", "automated diagnosis"],
-      "links": [
-        {
-          "type": "doi",
-          "url": "https://doi.org/10.1109/TMI.2024.example",
-          "label": "IEEE Xplore"
-        },
-        {
-          "type": "pdf",
-          "url": "https://example.com/papers/medical-segmentation-2024.pdf",
-          "label": "Full Text PDF"
-        },
-        {
-          "type": "code",
-          "url": "https://github.com/hyunjunglee/medical-segmentation",
-          "label": "Source Code"
-        },
-        {
-          "type": "bibtex",
-          "url": "https://example.com/bibtex/medical-segmentation-2024.bib",
-          "label": "BibTeX"
-        }
-      ],
-      "notes": "Impact Factor: 10.6, Featured Article"
-    },
-    {
-      "id": "multimodal-learning-disease-detection-2023",
-      "slug": "multi-modal-learning-for-early-disease-detection-in-medical-imaging",
-      "title": "Multi-Modal Learning for Early Disease Detection in Medical Imaging",
-      "authors": ["Sarah Kim", "Hyun Jung Lee", "Dr. Robert Park"],
-      "year": 2023,
-      "venue": "International Conference on Machine Learning (ICML)",
-      "type": "conference",
-      "venue_type": "ICML",
-      "citation_count": 78,
-      "abstract": "We propose a multi-modal learning framework that integrates imaging data with clinical records for early disease detection. The approach leverages cross-modal attention to identify subtle patterns indicative of disease onset, achieving significant improvements in early detection accuracy across multiple disease categories.",
-      "keywords": ["multi-modal learning", "early disease detection", "medical imaging", "cross-modal attention", "clinical AI"],
-      "links": [
-        {
-          "type": "website",
-          "url": "https://proceedings.mlr.press/v202/kim23a.html",
-          "label": "PMLR"
-        },
-        {
-          "type": "pdf",
-          "url": "https://proceedings.mlr.press/v202/kim23a/kim23a.pdf",
-          "label": "Conference Paper"
-        },
-        {
-          "type": "code",
-          "url": "https://github.com/sarahkim/multimodal-disease-detection",
-          "label": "Implementation"
-        },
-        {
-          "type": "arxiv",
-          "url": "https://arxiv.org/abs/2305.12345",
-          "label": "arXiv Preprint"
-        }
-      ]
-    },
-    {
-      "id": "federated-learning-healthcare-2023",
-      "slug": "federated-learning-framework-for-privacy-preserving-healthcare-ai",
-      "title": "Federated Learning Framework for Privacy-Preserving Healthcare AI",
-      "authors": ["Hyun Jung Lee", "Anna Zhang", "Dr. James Wilson"],
-      "year": 2023,
-      "venue": "Medical Image Computing and Computer Assisted Intervention (MICCAI)",
+      "id": "sparse3diff-2025",
+      "slug": "sparse3diff-diffusion-framework-3d-reconstruction",
+      "title": "Sparse3Diff: A Diffusion Framework for 3D Reconstruction from Sparse 2D Slices in Volumetric Optical Imaging",
+      "authors": ["Lee, H. J.", "Jo, E.", "Lim, M.", "Son, Y. H.", "Kang, B.", "Nam, H.", "Jung, H.", "Shin, D. H.", "Kam, T. E."],
+      "year": 2025,
+      "venue": "Medical Image Computing and Computer-Assisted Intervention (MICCAI)",
       "type": "conference",
       "venue_type": "MICCAI",
-      "citation_count": 92,
-      "abstract": "This work introduces a comprehensive federated learning framework designed specifically for healthcare AI applications. Our approach addresses key challenges in medical data privacy while enabling collaborative model training across institutions, achieving comparable performance to centralized approaches without compromising patient privacy.",
-      "keywords": ["federated learning", "healthcare AI", "privacy preservation", "medical data", "collaborative learning"],
+      "equal_contrib": [0, 1],
       "links": [
         {
           "type": "doi",
           "url": "https://link.springer.com/chapter/10.1007/978-3-031-example",
           "label": "Springer Link"
-        },
-        {
-          "type": "pdf",
-          "url": "https://example.com/papers/federated-healthcare-2023.pdf",
-          "label": "Author Version"
-        },
-        {
-          "type": "code",
-          "url": "https://github.com/hyunjunglee/federated-healthcare",
-          "label": "Framework Code"
         }
-      ],
-      "notes": "Best Paper Award - MICCAI 2023"
+      ]
     },
     {
-      "id": "attention-mechanisms-survey-2022",
-      "slug": "attention-mechanisms-in-medical-image-analysis-comprehensive-survey",
-      "title": "Attention Mechanisms in Medical Image Analysis: A Comprehensive Survey",
-      "authors": ["Michael Chen", "Hyun Jung Lee"],
-      "year": 2022,
-      "venue": "ACM Computing Surveys",
+      "id": "offline-model-optimization-2025",
+      "slug": "offline-model-based-optimization-molecular-discovery",
+      "title": "Offline Model-based Optimization for Real-World Molecular Discovery",
+      "authors": ["Shin, D. H.", "Son, Y. H.", "Lee, H. J.", "Lee, D. J.", "Kam, T. E."],
+      "year": 2025,
+      "venue": "International Conference on Machine Learning (ICML)",
+      "type": "conference",
+      "venue_type": "ICML",
+      "equal_contrib": [0, 1]
+    },
+    {
+      "id": "diffusion-zero-shot-reconstruction-2024",
+      "slug": "diffusion-based-zero-shot-isotropic-reconstruction",
+      "title": "Solving Blind Inverse Problem in Microscopy: Diffusion-based Zero-shot Isotropic Reconstruction",
+      "authors": ["Lee, H. J.", "Jo, E.", "Lim, M.", "Oh, J.", "Kam, T. E."],
+      "year": 2024,
+      "venue": "IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+      "type": "conference",
+      "venue_type": "BIBM"
+    },
+    {
+      "id": "diffusion-zero-shot-bmc-2024",
+      "slug": "diffusion-based-zero-shot-reconstruction-bmc",
+      "title": "Solving Blind Inverse Problem in Microscopy: Diffusion-based Zero-shot Isotropic Reconstruction",
+      "authors": ["Lee, H. J.", "Ozbulak, U.", "Park, H.", "Depuydt, S.", "De Neve, W.", "Vankerschaver, J."],
+      "year": 2024,
+      "venue": "BMC Bioinformatics",
       "type": "journal",
-      "equal_contrib": [0, 1],
-      "citation_count": 234,
-      "abstract": "This comprehensive survey examines the application of attention mechanisms in medical image analysis, covering spatial attention, channel attention, and self-attention approaches. We analyze over 200 papers published between 2017-2022, identifying key trends, challenges, and future research directions in this rapidly evolving field.",
-      "keywords": ["attention mechanisms", "medical image analysis", "survey", "deep learning", "computer vision"],
-      "links": [
-        {
-          "type": "doi",
-          "url": "https://doi.org/10.1145/3543507.3583875",
-          "label": "ACM Digital Library"
-        },
-        {
-          "type": "pdf",
-          "url": "https://example.com/papers/attention-survey-2022.pdf",
-          "label": "Full Survey"
-        },
-        {
-          "type": "website",
-          "url": "https://attention-medical-survey.github.io",
-          "label": "Companion Website"
-        }
-      ],
-      "notes": "Survey paper, 150+ citations, Most Downloaded Article 2022"
+      "venue_type": "BMC Bioinformatics"
+    },
+    {
+      "id": "mutation-dnn-2024",
+      "slug": "mutate-observe-deep-neural-networks-mutations",
+      "title": "Mutate and Observe: Utilizing Deep Neural Networks to Investigate the Impact of Mutations on Translation Initiation",
+      "authors": ["Ozbulak, U.", "Lee, H. J.", "Zuallaert, J.", "De Neve, W.", "Depuydt, S.", "Vankerschaver, J."],
+      "year": 2024,
+      "venue": "Bioinformatics",
+      "type": "journal",
+      "venue_type": "Bioinformatics"
+    },
+    {
+      "id": "self-supervised-survey-2023",
+      "slug": "survey-self-supervised-learning-image",
+      "title": "Know Your Self-supervised Learning: A Survey on Image-based Generative and Discriminative Training",
+      "authors": ["Ozbulak, U.", "Lee, H. J.", "Boga, B.", "Anzaku, E. T.", "Park, H.", "Van Messem, A.", "Vankerschaver, J."],
+      "year": 2023,
+      "venue": "Transactions on Machine Learning Research (TMLR)",
+      "type": "journal",
+      "venue_type": "TMLR"
     }
   ]
 }
