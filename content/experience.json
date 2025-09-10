@@ -1,111 +1,90 @@
 {
   "experiences": [
     {
-      "id": "samsung-research-senior-scientist-2023",
-      "slug": "senior-research-scientist-samsung-research-institute",
-      "organization": "Samsung Research Institute",
-      "role": "Senior Research Scientist",
-      "location": "Seoul, South Korea",
-      "start_date": "2023-03",
-      "supervisor": "Dr. Jane Kim, VP of AI Research",
-      "description": "Leading AI research initiatives focused on medical imaging solutions and healthcare applications. Responsible for driving innovation in deep learning models for clinical deployment and establishing research partnerships with medical institutions.",
+      "id": "ghent-cbbds-researcher-2022-10",
+      "slug": "researcher-center-for-biosystems-and-biotech-data-science-ghent-university",
+      "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
+      "role": "Researcher",
+      "location": "Ghent, Belgium",
+      "start_date": "2022-10",
+      "end_date": "2023-05",
+      "supervisor": "Prof. Dr. Joris Vankerschaver",
+      "description": "Conducted research at the intersection of computational biology and medical AI, focusing on DNA sequence modeling and surgical video understanding with deep learning.",
       "bullets": [
-        "Led development of AI-powered medical imaging solutions for early cancer detection",
-        "Collaborated with medical professionals to validate AI models in clinical settings",
-        "Published 3 papers in top-tier conferences (ICML, MICCAI, IEEE TMI)",
-        "Mentored 5 junior researchers and supervised 2 master's students",
-        "Established partnerships with 3 major hospitals for clinical validation studies",
-        "Secured $2.5M in research funding for medical AI projects"
+        "Devised a DNA data augmentation method by mimicking silent mutation processes.",
+        "Predicted DNA-to-protein translation initiation likelihood with a CNN model.",
+        "Built a pre-trained CNN model for surgical datasets with self-supervised learning."
       ],
       "achievements": [
-        "Developed cancer detection model with 94% accuracy, 15% improvement over existing methods",
-        "Led team that won Samsung's Innovation Award for Medical AI Solutions",
-        "Filed 4 patents in medical image analysis algorithms",
-        "Presented research findings at 8 international conferences"
+        "Delivered a reproducible pipeline for DNA augmentation usable across related projects.",
+        "Established a baseline CNN for translation initiation prediction to support downstream analyses.",
+        "Prepared pre-trained surgical-vision features to accelerate labeling and model development."
       ],
-      "technologies": ["PyTorch", "TensorFlow", "MONAI", "Docker", "Kubernetes", "MLflow", "DICOM", "ITK"],
-      "team_size": 12,
-      "budget": "$2.5M annually"
+      "technologies": ["Python", "PyTorch", "scikit-learn", "OpenCV", "Biopython", "Git", "Linux"],
+      "team_size": 5
     },
     {
-      "id": "google-deepmind-research-intern-2022",
-      "slug": "research-intern-google-deepmind-health",
-      "organization": "Google DeepMind Health",
-      "role": "Research Intern",
-      "location": "London, UK",
-      "start_date": "2022-06",
-      "end_date": "2022-08",
-      "supervisor": "Dr. Mustafa Suleyman",
-      "description": "Summer research internship focusing on developing novel attention mechanisms for medical image segmentation. Worked within the Health team to advance state-of-the-art medical AI capabilities.",
+      "id": "ghent-cbbds-intern-2021-07",
+      "slug": "intern-center-for-biosystems-and-biotech-data-science-ghent-university-2021-summer",
+      "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
+      "role": "Intern",
+      "location": "Ghent, Belgium",
+      "start_date": "2021-07",
+      "end_date": "2021-08",
+      "supervisor": "Prof. Dr. Wesley De Neve",
+      "description": "Summer internship focused on object detection for medical images and surgical video analytics.",
       "bullets": [
-        "Developed novel attention mechanisms for medical image segmentation",
-        "Improved model accuracy by 15% on benchmark datasets",
-        "Presented findings to senior research team and product stakeholders",
-        "Collaborated with clinical partners on model validation",
-        "Contributed to internal codebase and documentation"
+        "Conducted research on object detection for medical image and video analysis.",
+        "Developed an object detection algorithm for surgical video analysis."
       ],
       "achievements": [
-        "Invention disclosure filed for novel attention architecture",
-        "Internship project directly integrated into production system",
-        "Received outstanding internship performance rating",
-        "Invited to present at DeepMind's internal research symposium"
+        "Implemented a working detection prototype applicable to laparoscopic scenarios.",
+        "Documented dataset preparation and evaluation protocols for reuse."
       ],
-      "technologies": ["JAX", "Haiku", "TensorFlow", "BigQuery", "Vertex AI", "Cloud Storage"],
-      "team_size": 8
+      "technologies": ["Python", "PyTorch", "OpenCV"],
+      "team_size": 4
     },
     {
-      "id": "snu-graduate-research-assistant-2019",
-      "slug": "graduate-research-assistant-seoul-national-university-ai-lab",
-      "organization": "Seoul National University - AI Lab",
-      "role": "Graduate Research Assistant",
-      "location": "Seoul, South Korea",
-      "start_date": "2019-09",
-      "end_date": "2023-02",
-      "supervisor": "Prof. Dr. Chang-Su Kim",
-      "description": "Conducted doctoral research on federated learning for healthcare applications while serving as teaching assistant for graduate-level machine learning courses. Developed privacy-preserving algorithms for medical data analysis.",
+      "id": "ghent-brc-intern-2021-08",
+      "slug": "intern-biomedical-research-center-ghent-university-2021-august",
+      "organization": "Biomedical Research Center, Ghent University",
+      "role": "Intern",
+      "location": "Ghent, Belgium",
+      "start_date": "2021-08",
+      "end_date": "2021-08",
+      "supervisor": "Prof. Dr. Magdalena Radwanska",
+      "description": "Explored parasitic infection effects using single-cell RNA-seq analysis and dimensionality reduction workflows.",
       "bullets": [
-        "Conducted research on federated learning for healthcare applications",
-        "Developed privacy-preserving algorithms for medical data analysis",
-        "Teaching assistant for Machine Learning and Computer Vision courses",
-        "Organized weekly research seminars and journal clubs",
-        "Mentored 6 undergraduate research students",
-        "Published 8 papers in top-tier venues during PhD"
+        "Experimented on the effects of parasite infection with UMAP-based visualization.",
+        "Analyzed raw single-cell RNA-seq data using bioinformatics tools (e.g., R) to discover cell populations present during a disease stage."
       ],
       "achievements": [
-        "PhD dissertation awarded 'Outstanding Thesis' recognition",
-        "Google PhD Fellowship recipient (2021-2023)",
-        "Best Teaching Assistant Award - Computer Science Department",
-        "Organized successful ICML workshop on Medical AI (100+ attendees)",
-        "Developed federated learning framework adopted by 3 hospitals"
+        "Produced annotated cell-cluster visualizations supporting hypothesis generation.",
+        "Standardized a minimal scRNA-seq preprocessing script for lab members."
       ],
-      "technologies": ["Python", "PyTorch", "TensorFlow", "PySyft", "Ray", "PostgreSQL", "Redis", "Linux"],
-      "team_size": 15
+      "technologies": ["R", "Seurat", "UMAP", "ggplot2"],
+      "team_size": 3
     },
     {
-      "id": "kaist-research-assistant-2017",
-      "slug": "research-assistant-kaist-electrical-engineering",
-      "organization": "KAIST - Electrical Engineering Department",
-      "role": "Research Assistant",
-      "location": "Daejeon, South Korea",
-      "start_date": "2017-09",
-      "end_date": "2019-06",
-      "supervisor": "Prof. Dr. Sungroh Yoon",
-      "description": "Master's research focused on CNN-based image classification for autonomous systems. Developed efficient neural network architectures for real-time processing in resource-constrained environments.",
+      "id": "ghent-cbbds-intern-2021-02",
+      "slug": "intern-center-for-biosystems-and-biotech-data-science-ghent-university-2021-spring",
+      "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
+      "role": "Intern",
+      "location": "Ghent, Belgium",
+      "start_date": "2021-02",
+      "end_date": "2021-03",
+      "supervisor": "Prof. Dr. Utku Ozbulak",
+      "description": "Applied deep learning to DNA sequence modeling; investigated model sensitivity to point mutations.",
       "bullets": [
-        "Developed CNN architectures for autonomous vehicle perception",
-        "Optimized models for edge deployment and real-time inference",
-        "Collaborated with industry partners on autonomous driving projects",
-        "Published 3 conference papers on efficient neural networks",
-        "Teaching assistant for Digital Signal Processing course"
+        "Applied deep learning models for prediction and evaluation.",
+        "Executed point mutations in DNA and analyzed their effect on deep neural network predictions, focusing on translation initiation site prediction."
       ],
       "achievements": [
-        "Master's thesis received departmental excellence award",
-        "Developed mobile-optimized CNN achieving 25% speedup with comparable accuracy",
-        "Samsung Scholarship recipient for academic excellence",
-        "Contributed to open-source edge AI framework with 500+ GitHub stars"
+        "Established a mutation-testing protocol to measure model robustness on genomic inputs.",
+        "Shared reproducible notebooks for mutation impact analysis with the group."
       ],
-      "technologies": ["Python", "TensorFlow", "OpenCV", "CUDA", "ARM NEON", "ROS", "C++"],
-      "team_size": 8
+      "technologies": ["Python", "PyTorch", "NumPy", "Biopython", "Matplotlib"],
+      "team_size": 4
     }
   ]
 }
