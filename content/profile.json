@@ -5,17 +5,17 @@
   "contacts": [
     {
       "type": "email",
-      "value": "hyunjung.lee@example.edu",
+      "value": "hyulee@korea.ac.kr",
       "label": "Academic Email"
     },
     {
       "type": "phone",
-      "value": "+82-10-1234-5678"
+      "value": "+82-10-****-****"
     },
     {
       "type": "linkedin",
       "value": "hyunjung-lee",
-      "url": "https://linkedin.com/in/hyunjung-lee",
+      "url": "https://www.linkedin.com/in/hyun-jung-lee-49285a177/",
       "label": "LinkedIn Profile"
     },
     {
@@ -25,133 +25,191 @@
     },
     {
       "type": "address",
-      "value": "Seoul National University, Computer Science Department"
+      "value": "Korea University, AI Department"
     }
   ],
-  "profile_summary": "Research scientist specializing in machine learning and computer vision with a focus on medical image analysis. Experienced in developing deep learning models for healthcare applications and published researcher in top-tier AI conferences. Passionate about bridging the gap between academic research and practical applications in medical AI.",
+  "profile_summary": "Hi! I am Hyun Jung Lee, master’s student in the AI Department at Korea University. Currently focusing on AI research, with particular interests in multimodal models, reinforcement learning, and generative methods. Passionate about applications at the intersection of medical data and multimodal learning, and exploring PhD opportunities in this field.",
   "publications": [
     {
-      "authors": ["Hyun Jung Lee", "Sarah Kim", "Michael Chen"],
-      "year": 2024,
-      "title": "Deep Learning Approaches for Automated Medical Image Segmentation in Radiology",
-      "venue": "IEEE Transactions on Medical Imaging",
-      "type": "journal",
-      "equal_contrib": [0, 1],
-      "link": "https://doi.org/10.1109/TMI.2024.example",
-      "notes": "Impact Factor: 10.6"
+      "authors": [
+        "Lee, H. J.",
+        "Jo, E.",
+        "Lim, M.",
+        "Son, Y. H.",
+        "Kang, B.",
+        "Nam, H.",
+        "Jung, H.",
+        "Shin, D. H.",
+        "Kam, T. E."
+      ],
+      "year": 2025,
+      "title": "Sparse3Diff: A Diffusion Framework for 3D Reconstruction from Sparse 2D Slices in Volumetric Optical Imaging",
+      "venue": "Medical Image Computing and Computer-Assisted Intervention (MICCAI)",
+      "type": "conference",
+      "equal_contrib": [
+        0,
+        1
+      ]
     },
     {
-      "authors": ["Sarah Kim", "Hyun Jung Lee", "Dr. Robert Park"],
-      "year": 2023,
-      "title": "Multi-Modal Learning for Early Disease Detection in Medical Imaging",
+      "authors": [
+        "Shin, D. H.",
+        "Son, Y. H.",
+        "Lee, H. J.",
+        "Lee, D. J.",
+        "Kam, T. E."
+      ],
+      "year": 2025,
+      "title": "Offline Model-based Optimization for Real-World Molecular Discovery",
       "venue": "International Conference on Machine Learning (ICML)",
       "type": "conference",
-      "link": "https://proceedings.mlr.press/v202/kim23a.html"
+      "equal_contrib": [
+        0,
+        1
+      ]
     },
     {
-      "authors": ["Hyun Jung Lee", "Anna Zhang", "Dr. James Wilson"],
+      "authors": [
+        "Lee, H. J.",
+        "Jo, E.",
+        "Lim, M.",
+        "Oh, J.",
+        "Kam, T. E."
+      ],
+      "year": 2024,
+      "title": "Solving Blind Inverse Problem in Microscopy: Diffusion-based Zero-shot Isotropic Reconstruction",
+      "venue": "IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+      "type": "conference"
+    },
+    {
+      "authors": [
+        "Lee, H. J.",
+        "Ozbulak, U.",
+        "Park, H.",
+        "Depuydt, S.",
+        "De Neve, W.",
+        "Vankerschaver, J."
+      ],
+      "year": 2024,
+      "title": "Solving Blind Inverse Problem in Microscopy: Diffusion-based Zero-shot Isotropic Reconstruction",
+      "venue": "BMC Bioinformatics",
+      "type": "journal"
+    },
+    {
+      "authors": [
+        "Ozbulak, U.",
+        "Lee, H. J.",
+        "Zuallaert, J.",
+        "De Neve, W.",
+        "Depuydt, S.",
+        "Vankerschaver, J."
+      ],
+      "year": 2024,
+      "title": "Mutate and Observe: Utilizing Deep Neural Networks to Investigate the Impact of Mutations on Translation Initiation",
+      "venue": "Bioinformatics",
+      "type": "journal"
+    },
+    {
+      "authors": [
+        "Ozbulak, U.",
+        "Lee, H. J.",
+        "Boga, B.",
+        "Anzaku, E. T.",
+        "Park, H.",
+        "Van Messem, A.",
+        "Vankerschaver, J."
+      ],
       "year": 2023,
-      "title": "Federated Learning Framework for Privacy-Preserving Healthcare AI",
-      "venue": "Medical Image Computing and Computer Assisted Intervention (MICCAI)",
-      "type": "conference",
-      "link": "https://link.springer.com/chapter/10.1007/978-3-031-example"
-    },
-    {
-      "authors": ["Michael Chen", "Hyun Jung Lee"],
-      "year": 2022,
-      "title": "Attention Mechanisms in Medical Image Analysis: A Comprehensive Survey",
-      "venue": "ACM Computing Surveys",
-      "type": "journal",
-      "equal_contrib": [0, 1],
-      "notes": "Survey paper, 150+ citations"
+      "title": "Know Your Self-supervised Learning: A Survey on Image-based Generative and Discriminative Training",
+      "venue": "Transactions on Machine Learning Research (TMLR)",
+      "type": "journal"
     }
   ],
   "education": [
     {
-      "institution": "Seoul National University",
-      "degree": "Ph.D.",
-      "field": "Computer Science",
-      "year": 2023,
-      "gpa": "4.2/4.3",
-      "location": "Seoul, South Korea",
-      "thesis": "Advanced Deep Learning Techniques for Medical Image Analysis and Diagnosis",
-      "advisor": "Prof. Dr. Chang-Su Kim",
-      "interests": ["Machine Learning", "Computer Vision", "Medical AI", "Deep Learning"]
-    },
-    {
-      "institution": "KAIST",
+      "institution": "Korea University",
       "degree": "M.S.",
-      "field": "Electrical Engineering",
-      "year": 2019,
-      "gpa": "4.1/4.3",
-      "location": "Daejeon, South Korea",
-      "thesis": "CNN-based Image Classification for Autonomous Systems",
-      "advisor": "Prof. Dr. Sungroh Yoon"
+      "field": "Artificial Intelligence",
+      "year": 2025,
+      "gpa": "4.5/4.5",
+      "location": "Seoul, South Korea",
+      "advisor": "Prof. Dr. Tae-Eui Kam",
+      "interests": [
+        "Generative Models",
+        "Multimodal Models",
+        "Medical AI"
+      ]
     },
     {
-      "institution": "Yonsei University",
+      "institution": "Ghent University",
       "degree": "B.S.",
-      "field": "Computer Science",
-      "year": 2017,
-      "gpa": "3.9/4.3",
-      "location": "Seoul, South Korea",
-      "interests": ["Software Engineering", "Algorithms", "Data Structures"]
+      "field": "Molecular Biotechnology",
+      "year": 2022,
+      "gpa": "summa cum laude",
+      "location": "Ghent, Belgium",
+      "thesis": "Towards Robust Peritoneal Tumor Diagnosis – Deep learning-based binary classification and detection of tumors in laparoscopic videos"
     }
   ],
   "experience": [
     {
-      "title": "Senior Research Scientist",
-      "organization": "Samsung Research Institute",
-      "location": "Seoul, South Korea",
-      "start_date": "2023-03",
+      "title": "Researcher",
+      "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
+      "start_date": "2022-10",
+      "end_date": "2023-05",
       "bullets": [
-        "Led development of AI-powered medical imaging solutions for early cancer detection",
-        "Collaborated with medical professionals to validate AI models in clinical settings",
-        "Published 3 papers in top-tier conferences (ICML, MICCAI, IEEE TMI)",
-        "Mentored 5 junior researchers and supervised 2 master's students"
+        "Devised a DNA data augmentation method by mimicking silent mutation processes.",
+        "Predicted DNA-to-protein translation initiation likelihood with a CNN model.",
+        "Built a pre-trained CNN model for surgical datasets with self-supervised learning."
       ],
-      "supervisor": "Dr. Jane Kim, VP of AI Research"
+      "supervisor": "Prof. Dr. Joris Vankerschaver"
     },
     {
-      "title": "Research Intern",
-      "organization": "Google DeepMind Health",
-      "location": "London, UK",
-      "start_date": "2022-06",
-      "end_date": "2022-08",
+      "title": "Intern",
+      "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
+      "start_date": "2021-07",
+      "end_date": "2021-08",
       "bullets": [
-        "Developed novel attention mechanisms for medical image segmentation",
-        "Improved model accuracy by 15% on benchmark datasets",
-        "Presented findings to senior research team and product stakeholders"
+        "Conducted research on object detection for medical image and video analysis.",
+        "Developed an object detection algorithm for surgical video analysis."
       ],
-      "supervisor": "Dr. Mustafa Suleyman"
+      "supervisor": "Prof. Dr. Wesley De Neve"
     },
     {
-      "title": "Graduate Research Assistant",
-      "organization": "Seoul National University - AI Lab",
-      "location": "Seoul, South Korea",
-      "start_date": "2019-09",
-      "end_date": "2023-02",
+      "title": "Intern",
+      "organization": "Biomedical Research Center, Ghent University",
+      "start_date": "2021-08",
+      "end_date": "2021-08",
       "bullets": [
-        "Conducted research on federated learning for healthcare applications",
-        "Developed privacy-preserving algorithms for medical data analysis",
-        "Teaching assistant for Machine Learning and Computer Vision courses",
-        "Organized weekly research seminars and journal clubs"
+        "Experimented on the effects of parasite infection with UMAP-based visualization.",
+        "Analyzed raw single-cell RNA-seq data using bioinformatics tools (e.g., R) to discover cell populations present during a disease stage."
       ],
-      "supervisor": "Prof. Dr. Chang-Su Kim"
+      "supervisor": "Prof. Dr. Magdalena Radwanska"
+    },
+    {
+      "title": "Intern",
+      "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
+      "start_date": "2021-02",
+      "end_date": "2021-03",
+      "bullets": [
+        "Applied deep learning models for prediction and evaluation.",
+        "Executed point mutations in DNA and analyzed their effect on deep neural network predictions, focusing on translation initiation site prediction."
+      ],
+      "supervisor": "Prof. Dr. Utku Ozbulak"
     }
   ],
   "skills": [
-    "Python", "TensorFlow", "PyTorch", "OpenCV", "scikit-learn", "Docker", "Kubernetes", "Git", "Linux", "SQL"
-  ],
-  "awards": [
-    "Best Paper Award - MICCAI 2023",
-    "Google PhD Fellowship in Machine Learning - 2021",
-    "Samsung Scholarship for Graduate Studies - 2019-2023",
-    "Dean's List - Yonsei University (2015-2017)"
+    "Python",
+    "TensorFlow",
+    "PyTorch",
+    "OpenCV",
+    "scikit-learn",
+    "Docker",
+    "Git",
+    "Linux",
+    "SQL"
   ],
   "languages": [
     "Korean (Native)",
-    "English (Fluent)",
-    "Japanese (Conversational)"
+    "English (Fluent)"
   ]
 }
