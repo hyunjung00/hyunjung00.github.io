@@ -33,6 +33,37 @@
     {
       "authors": [
         "Lee, H. J.",
+        "Oh, J. H.",
+        "Jo, E.",
+        "Kam, T. E."
+      ],
+      "year": 2025,
+      "title": "ProMoA-VPO: Progressive Multi-Objective Alignment for Video Prompt Optimization",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "type": "conference",
+      "status": "under review",
+      "equal_contrib": [0, 1, 2]
+    },
+    {
+      "authors": [
+        "Lee, H. J.",
+        "Jo, E.",
+        "Lim, M.",
+        "Nam, H.",
+        "Son, Y. H.",
+        "Kam, T. E."
+      ],
+      "year": 2025,
+      "title": "CoVo3Diffusion: Consistency Preserved 3D Volume Reconstruction from Sparse 2D Slices via a Diffusion Framework for Volumetric Optical Imaging",
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal",
+      "status": "under review",
+      "notes": "Q1",
+      "equal_contrib": [0, 1]
+    },
+    {
+      "authors": [
+        "Lee, H. J.",
         "Jo, E.",
         "Lim, M.",
         "Son, Y. H.",
