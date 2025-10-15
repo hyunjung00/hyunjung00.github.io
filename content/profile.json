@@ -33,7 +33,7 @@
       "title": "ProMoA-VPO: Progressive Multi-Objective Alignment for Video Prompt Optimization",
       "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
       "type": "conference",
-      "status": "under review",
+      "notes": "under review",
       "equal_contrib": [
         0,
         1,
@@ -53,8 +53,7 @@
       "title": "CoVo3Diffusion: Consistency Preserved 3D Volume Reconstruction from Sparse 2D Slices via a Diffusion Framework for Volumetric Optical Imaging",
       "venue": "IEEE Transactions on Medical Imaging",
       "type": "journal",
-      "status": "under review",
-      "notes": "Q1",
+      "notes": "under review, Q1, IF=9.8",
       "equal_contrib": [
         0,
         1
