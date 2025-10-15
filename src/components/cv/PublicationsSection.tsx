@@ -5,11 +5,16 @@ interface PublicationsSectionProps {
   publications: Publication[];
 }
 
-const formatAuthors = (authors: string[], equalContrib?: number[]) => {
+const formatAuthors = (
+  authors: string[],
+  equalContrib?: number[],
+  bold_authors?: number[]
+) => {
   return authors.map((author, index) => {
+    const isFirstAuthor = bold_authors?.includes(index);
     const isEqualContrib = equalContrib?.includes(index);
     return (
-      <span key={index} className={isEqualContrib ? "equal-contrib" : ""}>
+      <span key={index} className={isFirstAuthor ? "first-author" : ""}>
         {author}
         {isEqualContrib && "*"}
         {index < authors.length - 1 && ", "}
@@ -24,7 +29,7 @@ const formatCitation = (pub: Publication) => {
   return (
     <div className="space-y-1">
       <div className="publication-authors">
-        {formatAuthors(pub.authors, pub.equal_contrib)}
+        {formatAuthors(pub.authors, pub.equal_contrib, pub.bold_authors)}
         {hasEqualContrib && (
           <span className="text-xs text-caption ml-1">
             (*equal contribution)
