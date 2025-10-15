@@ -2,6 +2,7 @@
   "name": "Hyun Jung Lee",
   "role": "Research Scientist & AI Engineer",
   "location": "Seoul, South Korea",
+  "avatar": "./profile.jpeg",
   "contacts": [
     {
       "type": "email",
@@ -9,19 +10,10 @@
       "label": "Academic Email"
     },
     {
-      "type": "phone",
-      "value": "+82-10-****-****"
-    },
-    {
       "type": "linkedin",
       "value": "hyunjung-lee",
       "url": "https://www.linkedin.com/in/hyun-jung-lee-49285a177/",
       "label": "LinkedIn Profile"
-    },
-    {
-      "type": "website",
-      "value": "https://hyunjunglee.dev",
-      "label": "Personal Website"
     },
     {
       "type": "address",
@@ -42,7 +34,11 @@
       "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
       "type": "conference",
       "status": "under review",
-      "equal_contrib": [0, 1, 2]
+      "equal_contrib": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "authors": [
@@ -59,7 +55,10 @@
       "type": "journal",
       "status": "under review",
       "notes": "Q1",
-      "equal_contrib": [0, 1]
+      "equal_contrib": [
+        0,
+        1
+      ]
     },
     {
       "authors": [
