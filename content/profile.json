@@ -38,6 +38,9 @@
         0,
         1,
         2
+      ],
+      "bold_authors": [
+        0
       ]
     },
     {
@@ -57,6 +60,9 @@
       "equal_contrib": [
         0,
         1
+      ],
+      "bold_authors": [
+        0
       ]
     },
     {
@@ -78,6 +84,9 @@
       "equal_contrib": [
         0,
         1
+      ],
+        "bold_authors": [
+        0
       ]
     },
     {
@@ -95,6 +104,9 @@
       "equal_contrib": [
         0,
         1
+      ],
+      "bold_authors": [
+        2
       ]
     },
     {
@@ -108,7 +120,10 @@
       "year": 2024,
       "title": "Solving Blind Inverse Problem in Microscopy: Diffusion-based Zero-shot Isotropic Reconstruction",
       "venue": "IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
-      "type": "conference"
+      "type": "conference",
+      "bold_authors": [
+        0
+      ]
     },
     {
       "authors": [
@@ -122,7 +137,10 @@
       "year": 2024,
       "title": "Solving Blind Inverse Problem in Microscopy: Diffusion-based Zero-shot Isotropic Reconstruction",
       "venue": "BMC Bioinformatics",
-      "type": "journal"
+      "type": "journal",
+      "bold_authors": [
+        0
+      ]
     },
     {
       "authors": [
@@ -151,7 +169,10 @@
       "year": 2023,
       "title": "Know Your Self-supervised Learning: A Survey on Image-based Generative and Discriminative Training",
       "venue": "Transactions on Machine Learning Research (TMLR)",
-      "type": "journal"
+      "type": "journal",
+      "bold_authors": [
+        1
+      ]
     }
   ],
   "education": [
