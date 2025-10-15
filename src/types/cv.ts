@@ -1,5 +1,5 @@
 export interface Contact {
-  type: 'email' | 'phone' | 'linkedin' | 'website' | 'address';
+  type: "email" | "phone" | "linkedin" | "website" | "address";
   value: string;
   url?: string;
   label?: string;
@@ -13,7 +13,8 @@ export interface Publication {
   notes?: string;
   link?: string;
   equal_contrib?: number[]; // Indices of authors with equal contribution
-  type?: 'journal' | 'conference' | 'workshop' | 'preprint';
+  type?: "journal" | "conference" | "workshop" | "preprint";
+  bold_authors?: number[];
 }
 
 export interface Education {
