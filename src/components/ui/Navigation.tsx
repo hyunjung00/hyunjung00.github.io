@@ -17,7 +17,7 @@ export function Navigation({ className = "" }: NavigationProps) {
         </Link>
 
         <div className="flex items-center space-x-6">
-          <Link
+          {/* <Link
             to={homeUrl}
             className="text-body hover:text-primary transition-colors"
           >
@@ -34,7 +34,7 @@ export function Navigation({ className = "" }: NavigationProps) {
             className="text-body hover:text-primary transition-colors"
           >
             Experience
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>
