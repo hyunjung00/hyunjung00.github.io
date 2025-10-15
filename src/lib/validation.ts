@@ -16,6 +16,7 @@ const PublicationSchema = z.object({
   link: z.string().url().optional(),
   equal_contrib: z.array(z.number().int().min(0)).optional(),
   type: z.enum(['journal', 'conference', 'workshop', 'preprint']).optional(),
+  bold_authors: z.array(z.number().int().min(0)).optional(),
 });
 
 const EducationSchema = z.object({
