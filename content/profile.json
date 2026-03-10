@@ -219,36 +219,15 @@
     {
       "title": "Intern",
       "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
-      "start_date": "2021-07",
-      "end_date": "2021-08",
-      "bullets": [
-        "Conducted research on object detection for medical image and video analysis.",
-        "Developed an object detection algorithm for surgical video analysis."
-      ],
-      "supervisor": "Prof. Dr. Wesley De Neve"
-    },
-    {
-      "title": "Intern",
-      "organization": "Biomedical Research Center, Ghent University",
-      "start_date": "2021-08",
-      "end_date": "2021-08",
-      "bullets": [
-        "Experimented on the effects of parasite infection with UMAP-based visualization.",
-        "Analyzed raw single-cell RNA-seq data using bioinformatics tools (e.g., R) to discover cell populations present during a disease stage."
-      ],
-      "supervisor": "Prof. Dr. Magdalena Radwanska"
-    },
-    {
-      "title": "Intern",
-      "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
       "start_date": "2021-02",
-      "end_date": "2021-03",
+      "end_date": "2021-08",
       "bullets": [
-        "Applied deep learning models for prediction and evaluation.",
-        "Executed point mutations in DNA and analyzed their effect on deep neural network predictions, focusing on translation initiation site prediction."
+        "Experimented on the effects of parasite infection with UMAP-based visualization."
+        "Executed point mutations in DNA and analyzed their effect on deep neural network predictions, focusing on translation initiation site prediction.",
+        "Conducted research on object detection for medical image and video analysis.",
       ],
-      "supervisor": "Prof. Dr. Utku Ozbulak"
-    }
+      "supervisor": "Prof. Dr. Wesley De Neve", "Prof. Dr. Utku Ozbulak"
+    },
   ],
   "skills": [
     "Python",
