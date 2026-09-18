@@ -13,7 +13,7 @@ export function EducationSection({ education }: EducationSectionProps) {
       <h2 className="cv-heading">Education</h2>
       
       <div className="space-y-6">
-        {education
+        {[...education]
           .sort((a, b) => b.year - a.year)
           .map((edu, index) => (
             <div key={index} className="cv-content">
@@ -21,7 +21,7 @@ export function EducationSection({ education }: EducationSectionProps) {
                 <div className="flex-1">
                   <h3 className="font-semibold text-heading flex items-center gap-2">
                     <GraduationCap className="w-4 h-4 text-primary" />
-                    {edu.degree} in {edu.field}
+                    {edu.degree}{edu.degree === 'Visiting Scholar' ? ' — ' : ' in '}{edu.field}
                   </h3>
                   <p className="text-primary font-medium">{edu.institution}</p>
                   {edu.location && (
@@ -32,12 +32,16 @@ export function EducationSection({ education }: EducationSectionProps) {
                   )}
                 </div>
                 <div className="text-right">
-                  <p className="font-medium text-heading">{edu.year}</p>
+                  <p className="font-medium text-heading">{edu.period || edu.year}</p>
                   {edu.gpa && (
                     <p className="text-sm text-caption">GPA: {edu.gpa}</p>
                   )}
                 </div>
               </div>
+
+              {edu.host && (
+                <p className="text-sm text-caption">Host: {edu.host}</p>
+              )}
               
               {edu.thesis && (
                 <div className="mt-3">

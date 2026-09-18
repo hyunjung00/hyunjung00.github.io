@@ -38,11 +38,9 @@ export function PublicationsSection({ publications }: PublicationsSectionProps) 
                     </div>
                     <div className="publication-title">"{pub.title}"</div>
                     <div className="publication-venue">{pub.venue}</div>
-                    {pub.status && (
-                      <span className={`inline-block rounded px-2 py-0.5 text-xs font-medium ${
-                        pub.status === "under_review" ? "bg-amber-100 text-amber-800" : "bg-emerald-100 text-emerald-800"
-                      }`}>
-                        {pub.status === "under_review" ? "Under review" : "Published"}
+                    {pub.status === "under_review" && (
+                      <span className="inline-block rounded px-2 py-0.5 text-xs font-medium bg-amber-100 text-amber-800">
+                        Under review
                       </span>
                     )}
                     {pub.notes && <div className="text-sm text-caption">{pub.notes}</div>}
