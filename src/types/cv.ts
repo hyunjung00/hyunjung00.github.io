@@ -26,6 +26,7 @@ export interface Education {
   period?: string;
   host?: string;
   gpa?: string;
+  honors?: string;
   location?: string;
   interests?: string[];
   thesis?: string;
