@@ -36,6 +36,9 @@ export function EducationSection({ education }: EducationSectionProps) {
                   {edu.gpa && (
                     <p className="text-sm text-caption">GPA: {edu.gpa}</p>
                   )}
+                  {edu.honors && (
+                    <p className="text-sm text-caption">Honors: {edu.honors}</p>
+                  )}
                 </div>
               </div>
 
