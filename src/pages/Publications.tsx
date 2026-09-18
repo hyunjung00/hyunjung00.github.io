@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Navigation } from '@/components/ui/Navigation';
 import Fuse from 'fuse.js';
+import { groupPublicationsByYear, publicationYearLabel } from '@/lib/publications';
 
 interface PublicationsPageProps {
   publications: DetailedPublication[];
@@ -35,7 +36,7 @@ export function PublicationsPage({ publications }: PublicationsPageProps) {
   // Get unique values for filters
   const years = useMemo(() => {
     const yearSet = new Set(publications.map(p => p.year));
-    return Array.from(yearSet).sort((a, b) => b - a);
+    return Array.from(yearSet).sort((a, b) => (b ?? -Infinity) - (a ?? -Infinity));
   }, [publications]);
 
   const venues = useMemo(() => {
@@ -54,7 +55,7 @@ export function PublicationsPage({ publications }: PublicationsPageProps) {
 
     // Apply filters
     if (selectedYear !== 'all') {
-      result = result.filter(p => p.year.toString() === selectedYear);
+      result = result.filter(p => (p.year === null ? 'undated' : String(p.year)) === selectedYear);
     }
     if (selectedVenue !== 'all') {
       result = result.filter(p => p.venue_type === selectedVenue);
@@ -71,7 +72,7 @@ export function PublicationsPage({ publications }: PublicationsPageProps) {
     }
 
     // Sort by year (newest first)
-    return result.sort((a, b) => b.year - a.year);
+    return [...result].sort((a, b) => (b.year ?? -Infinity) - (a.year ?? -Infinity));
   }, [publications, selectedYear, selectedVenue, selectedType, searchQuery, fuse]);
 
   const clearFilters = () => {
@@ -123,8 +124,8 @@ export function PublicationsPage({ publications }: PublicationsPageProps) {
                   <SelectContent>
                     <SelectItem value="all">All years</SelectItem>
                     {years.map(year => (
-                      <SelectItem key={year} value={year.toString()}>
-                        {year}
+                      <SelectItem key={year ?? 'undated'} value={year === null ? 'undated' : String(year)}>
+                        {publicationYearLabel(year)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -203,11 +204,17 @@ export function PublicationsPage({ publications }: PublicationsPageProps) {
           {/* Publications list */}
           {filteredPublications.length > 0 ? (
             <div className="space-y-6">
-              {filteredPublications.map((publication) => (
-                <PublicationCard
-                  key={publication.id}
-                  publication={publication}
-                />
+              {groupPublicationsByYear(filteredPublications).map((group) => (
+                <section key={group.label} aria-label={`Publications: ${group.label}`}>
+                  <h2 className="text-2xl font-semibold text-heading border-b border-border-light pb-2 mb-4">
+                    {group.label}
+                  </h2>
+                  <div className="space-y-6">
+                    {group.publications.map((publication) => (
+                      <PublicationCard key={publication.id} publication={publication} />
+                    ))}
+                  </div>
+                </section>
               ))}
             </div>
           ) : (

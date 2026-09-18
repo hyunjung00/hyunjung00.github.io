@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink, FileText, Award } from "lucide-react";
 import publicationsData from "../../content/publications.json";
+import { publicationYearLabel } from "@/lib/publications";
 
 interface PublicationDetailPageProps {
   slug: string;
@@ -61,7 +62,7 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
     return authors.map((author, index) => {
       const isEqualContrib = equalContrib?.includes(index);
       return (
-        <span key={index} className={isEqualContrib ? "equal-contrib" : ""}>
+        <span key={index} className={`${isEqualContrib ? "equal-contrib" : ""} ${publication.bold_authors?.includes(index) ? "first-author" : ""}`}>
           {author}
           {isEqualContrib && "*"}
           {index < authors.length - 1 && ", "}
@@ -136,7 +137,7 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
 
               <div className="publication-venue text-sm">
                 <span className="font-medium">{publication.venue}</span>,{" "}
-                {publication.year}
+                {publicationYearLabel(publication.year)}
               </div>
 
               {/* Metrics */}
@@ -148,6 +149,7 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
                   <span>{publication.citation_count} citations</span>
                 )}
                 <span className="capitalize">{publication.type}</span>
+                {publication.status && <span>{publication.status === "under_review" ? "Under review" : "Published"}</span>}
               </div>
             </div>
           </header>

@@ -8,12 +8,16 @@ import { AdditionalSections } from '@/components/cv/AdditionalSections';
 import { validateCVProfile } from '@/lib/validation';
 import { CVProfile } from '@/types/cv';
 import profileData from '../../content/profile.json';
+import publicationsData from '../../content/publications.json';
+import { validatePublications } from '@/lib/contentValidation';
 
 const Index = () => {
   // Validate profile data at runtime
   let profile: CVProfile;
+  let publications;
   try {
     profile = validateCVProfile(profileData);
+    publications = validatePublications(publicationsData).publications;
   } catch (error) {
     console.error('Failed to load CV profile:', error);
     return (
@@ -38,7 +42,7 @@ const Index = () => {
     <CVLayout>
       <CVHeader profile={profile} />
       <ProfileSection summary={profile.profile_summary} />
-      <PublicationsSection publications={profile.publications} />
+      <PublicationsSection publications={publications} />
       <EducationSection education={profile.education} />
       <ExperienceSection experience={profile.experience} />
       <AdditionalSections 
