@@ -115,9 +115,9 @@ export function PublicationCard({
           )}
         </div>
 
-        {publication.status && (
-          <span className={`inline-block rounded px-2 py-0.5 text-xs font-medium ${publication.status === "under_review" ? "bg-amber-100 text-amber-800" : "bg-emerald-100 text-emerald-800"}`}>
-            {publication.status === "under_review" ? "Under review" : "Published"}
+        {publication.status === "under_review" && (
+          <span className="inline-block rounded px-2 py-0.5 text-xs font-medium bg-amber-100 text-amber-800">
+            Under review
           </span>
         )}
 
