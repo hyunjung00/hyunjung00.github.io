@@ -149,7 +149,7 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
                   <span>{publication.citation_count} citations</span>
                 )}
                 <span className="capitalize">{publication.type}</span>
-                {publication.status && <span>{publication.status === "under_review" ? "Under review" : "Published"}</span>}
+                {publication.status === "under_review" && <span>Under review</span>}
               </div>
             </div>
           </header>
