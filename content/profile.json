@@ -21,163 +21,6 @@
     }
   ],
   "profile_summary": "Hi! I am Hyun Jung Lee, master’s student in the AI Department at Korea University. Currently focusing on AI research, with particular interests in multimodal models, reinforcement learning, and generative methods. Passionate about applications at the intersection of medical data and multimodal learning, and exploring PhD opportunities in this field.",
-  "publications": [
-    {
-      "authors": [
-        "Lee, H. J.",
-        "Oh, J. H.",
-        "Jo, E.",
-        "Kam, T. E."
-      ],
-      "year": 2026,
-      "title": "ProMoA-VPO: Progressive Multi-Objective Alignment for Video Prompt Optimization",
-      "venue": "Proceedings of the ECCV Conference",
-      "type": "conference",
-      "notes": "under review",
-      "equal_contrib": [
-        0,
-        1,
-        2
-      ],
-      "bold_authors": [
-        0
-      ]
-    },
-    {
-      "authors": [
-        "Lee, H. J.",
-        "Jo, E.",
-        "Lim, M.",
-        "Nam, H.",
-        "Son, Y. H.",
-        "Kam, T. E."
-      ],
-      "year": 2025,
-      "title": "CoVo3Diffusion: Consistency Preserved 3D Volume Reconstruction from Sparse 2D Slices via a Diffusion Framework for Volumetric Optical Imaging",
-      "venue": "IEEE Transactions on Medical Imaging",
-      "type": "journal",
-      "notes": "under review, Q1, IF=9.8",
-      "equal_contrib": [
-        0,
-        1
-      ],
-      "bold_authors": [
-        0
-      ]
-    },
-    {
-      "authors": [
-        "Lee, H. J.",
-        "Jo, E.",
-        "Lim, M.",
-        "Son, Y. H.",
-        "Kang, B.",
-        "Nam, H.",
-        "Jung, H.",
-        "Shin, D. H.",
-        "Kam, T. E."
-      ],
-      "year": 2025,
-      "title": "Sparse3Diff: A Diffusion Framework for 3D Reconstruction from Sparse 2D Slices in Volumetric Optical Imaging",
-      "venue": "Medical Image Computing and Computer-Assisted Intervention (MICCAI)",
-      "type": "conference",
-      "equal_contrib": [
-        0,
-        1
-      ],
-        "bold_authors": [
-        0
-      ]
-    },
-    {
-      "authors": [
-        "Shin, D. H.",
-        "Son, Y. H.",
-        "Lee, H. J.",
-        "Lee, D. J.",
-        "Kam, T. E."
-      ],
-      "year": 2025,
-      "title": "Offline Model-based Optimization for Real-World Molecular Discovery",
-      "venue": "International Conference on Machine Learning (ICML)",
-      "type": "conference",
-      "equal_contrib": [
-        0,
-        1
-      ],
-      "bold_authors": [
-        2
-      ]
-    },
-    {
-      "authors": [
-        "Lee, H. J.",
-        "Jo, E.",
-        "Lim, M.",
-        "Oh, J.",
-        "Kam, T. E."
-      ],
-      "year": 2024,
-      "title": "Solving Blind Inverse Problem in Microscopy: Diffusion-based Zero-shot Isotropic Reconstruction",
-      "venue": "IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
-      "type": "conference",
-      "bold_authors": [
-        0
-      ]
-    },
-    {
-      "authors": [
-        "Lee, H. J.",
-        "Ozbulak, U.",
-        "Park, H.",
-        "Depuydt, S.",
-        "De Neve, W.",
-        "Vankerschaver, J."
-      ],
-      "year": 2024,
-      "title": "Assessing the reliability of point mutation as data augmentation for deep learning with genomic data.",
-      "venue": "BMC Bioinformatics",
-      "type": "journal",
-      "bold_authors": [
-        0
-      ]
-    },
-    {
-      "authors": [
-        "Ozbulak, U.",
-        "Lee, H. J.",
-        "Zuallaert, J.",
-        "De Neve, W.",
-        "Depuydt, S.",
-        "Vankerschaver, J."
-      ],
-      "year": 2024,
-      "title": "Mutate and Observe: Utilizing Deep Neural Networks to Investigate the Impact of Mutations on Translation Initiation",
-      "venue": "Bioinformatics",
-      "type": "journal",
-      "bold_authors": [
-        1
-      ]
-    },
-    {
-      "authors": [
-        "Ozbulak, U.",
-        "Lee, H. J.",
-        "Boga, B.",
-        "Anzaku, E. T.",
-        "Park, H.",
-        "Van Messem, A.",
-        "Vankerschaver, J."
-      ],
-      "year": 2023,
-      "title": "Know Your Self-supervised Learning: A Survey on Image-based Generative and Discriminative Training",
-      "venue": "Transactions on Machine Learning Research (TMLR)",
-      "type": "journal",
-      "bold_authors": [
-        1
-      ]
-    }
-  ],
   "education": [
     {
       "institution": "Korea University",
@@ -222,12 +65,12 @@
       "start_date": "2021-02",
       "end_date": "2021-08",
       "bullets": [
-        "Experimented on the effects of parasite infection with UMAP-based visualization."
+        "Experimented on the effects of parasite infection with UMAP-based visualization.",
         "Executed point mutations in DNA and analyzed their effect on deep neural network predictions, focusing on translation initiation site prediction.",
-        "Conducted research on object detection for medical image and video analysis.",
+        "Conducted research on object detection for medical image and video analysis."
       ],
-      "supervisor": "Prof. Dr. Wesley De Neve", "Prof. Dr. Utku Ozbulak"
-    },
+      "supervisor": "Prof. Dr. Wesley De Neve, Prof. Dr. Utku Ozbulak"
+    }
   ],
   "skills": [
     "Python",

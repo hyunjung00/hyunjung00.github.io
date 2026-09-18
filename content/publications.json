@@ -1,22 +1,86 @@
 {
   "publications": [
     {
+      "id": "promoa-vpo-2027",
+      "slug": "promoa-vpo-progressive-multi-objective-alignment",
+      "title": "ProMoA-VPO: Progressive Multi-Objective Alignment for Video Prompt Optimization",
+      "authors": ["Lee, H. J.", "Oh, J. H.", "Jo, E.", "Kam, T. E."],
+      "year": 2027,
+      "venue": "Winter Conference on Applications of Computer Vision (WACV)",
+      "venue_type": "WACV",
+      "type": "conference",
+      "status": "published",
+      "equal_contrib": [0, 1, 2],
+      "bold_authors": [0],
+      "links": []
+    },
+    {
+      "id": "smarter-embedding-2026",
+      "slug": "your-embedding-model-is-smarter-than-you-think",
+      "title": "Your Embedding Model is SMARTer Than You Think",
+      "authors": ["Lee, H. J.", "Zhang, J.", "Ganguly, S.", "Kam, T. E.", "Kim, D. H.", "Lee, Y. J."],
+      "year": 2026,
+      "venue": "NeurIPS main track",
+      "venue_type": "NeurIPS",
+      "type": "conference",
+      "status": "under_review",
+      "notes": "Under review in the NeurIPS main track.",
+      "equal_contrib": [0, 1],
+      "bold_authors": [0],
+      "links": []
+    },
+    {
+      "id": "harness-optimization-2026",
+      "slug": "harness-optimization-embodied-agents-experience-traces",
+      "title": "Harness Optimization for Embodied Agents via Experience Traces",
+      "authors": ["Lee, H. J.", "Kim, J. T.", "Jeong, J. W.", "Kam, T. E.", "Kim, D. H.", "Lee, Y. J."],
+      "year": 2026,
+      "venue": "NeurIPS EvoRobust workshop / ICLR main track",
+      "type": "conference",
+      "status": "under_review",
+      "notes": "Under review in the NeurIPS EvoRobust workshop and ICLR main track.",
+      "bold_authors": [0],
+      "links": []
+    },
+    {
+      "id": "retrieval-moe-survival-2026",
+      "slug": "retrieval-mixture-experts-cancer-survival-prediction",
+      "title": "Retrieval-based Mixture-of-Experts for Patient-Specific Cancer Survival Prediction with Incomplete Multimodal Data",
+      "authors": ["Lim, M.", "Kang, B.", "Lee, H. J.", "Jo, E.", "Heo, K. S.", "Liu, M.", "Kam, T. E."],
+      "year": 2026,
+      "venue": "Medical Image Computing and Computer-Assisted Intervention (MICCAI)",
+      "venue_type": "MICCAI",
+      "type": "conference",
+      "status": "published",
+      "bold_authors": [2],
+      "links": []
+    },
+    {
+      "id": "optical-diffraction-convolution-2026",
+      "slug": "optical-diffraction-convolution-semiconductor-mask-optimization",
+      "title": "Optical Diffraction-based Convolution for Semiconductor Mask Optimization",
+      "authors": ["Son, Y. H.", "Shin, D. H.", "Lee, D. J.", "Lee, H. J.", "Kam, T. E."],
+      "year": 2026,
+      "venue": "Conference on Computer Vision and Pattern Recognition (CVPR)",
+      "venue_type": "CVPR",
+      "type": "conference",
+      "status": "published",
+      "bold_authors": [3],
+      "links": []
+    },
+    {
       "id": "sparse3diff-2025",
       "slug": "sparse3diff-diffusion-framework-3d-reconstruction",
       "title": "Sparse3Diff: A Diffusion Framework for 3D Reconstruction from Sparse 2D Slices in Volumetric Optical Imaging",
       "authors": ["Lee, H. J.", "Jo, E.", "Lim, M.", "Son, Y. H.", "Kang, B.", "Nam, H.", "Jung, H.", "Shin, D. H.", "Kam, T. E."],
       "year": 2025,
       "venue": "Medical Image Computing and Computer-Assisted Intervention (MICCAI)",
-      "type": "conference",
       "venue_type": "MICCAI",
+      "type": "conference",
+      "status": "published",
       "equal_contrib": [0, 1],
-      "links": [
-        {
-          "type": "doi",
-          "url": "https://link.springer.com/chapter/10.1007/978-3-031-example",
-          "label": "Springer Link"
-        }
-      ]
+      "bold_authors": [0],
+      "links": []
     },
     {
       "id": "offline-model-optimization-2025",
@@ -25,9 +89,25 @@
       "authors": ["Shin, D. H.", "Son, Y. H.", "Lee, H. J.", "Lee, D. J.", "Kam, T. E."],
       "year": 2025,
       "venue": "International Conference on Machine Learning (ICML)",
-      "type": "conference",
       "venue_type": "ICML",
-      "equal_contrib": [0, 1]
+      "type": "conference",
+      "status": "published",
+      "equal_contrib": [0, 1],
+      "bold_authors": [2],
+      "links": []
+    },
+    {
+      "id": "pre-post-operative-mri-2025",
+      "slug": "pre-post-operative-mri-retrieval-visual-in-context-learning",
+      "title": "Pre-to-Post Operative MRI Generation with Retrieval-based Visual In-Context Learning",
+      "authors": ["Kang, B.", "Park, S. J.", "Lim, M.", "Heo, K. S.", "Oh, J. H.", "Lee, H. J.", "Kam, T. E."],
+      "year": 2025,
+      "venue": "Medical Image Computing and Computer-Assisted Intervention (MICCAI)",
+      "venue_type": "MICCAI",
+      "type": "conference",
+      "status": "published",
+      "bold_authors": [5],
+      "links": []
     },
     {
       "id": "diffusion-zero-shot-reconstruction-2024",
@@ -36,28 +116,50 @@
       "authors": ["Lee, H. J.", "Jo, E.", "Lim, M.", "Oh, J.", "Kam, T. E."],
       "year": 2024,
       "venue": "IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+      "venue_type": "BIBM",
       "type": "conference",
-      "venue_type": "BIBM"
+      "status": "published",
+      "bold_authors": [0],
+      "links": []
     },
     {
-      "id": "diffusion-zero-shot-bmc-2024",
-      "slug": "diffusion-based-zero-shot-reconstruction-bmc",
-      "title": "Solving Blind Inverse Problem in Microscopy: Diffusion-based Zero-shot Isotropic Reconstruction",
+      "id": "point-mutation-reliability-2024",
+      "slug": "assessing-reliability-point-mutation-data-augmentation",
+      "title": "Assessing the reliability of point mutation as data augmentation for deep learning with genomic data",
       "authors": ["Lee, H. J.", "Ozbulak, U.", "Park, H.", "Depuydt, S.", "De Neve, W.", "Vankerschaver, J."],
       "year": 2024,
-      "venue": "BMC Bioinformatics",
+      "venue": "BMC Bioinformatics, 25(1), 170",
+      "venue_type": "BMC Bioinformatics",
       "type": "journal",
-      "venue_type": "BMC Bioinformatics"
+      "status": "published",
+      "bold_authors": [0],
+      "links": []
     },
     {
-      "id": "mutation-dnn-2024",
-      "slug": "mutate-observe-deep-neural-networks-mutations",
-      "title": "Mutate and Observe: Utilizing Deep Neural Networks to Investigate the Impact of Mutations on Translation Initiation",
-      "authors": ["Ozbulak, U.", "Lee, H. J.", "Zuallaert, J.", "De Neve, W.", "Depuydt, S.", "Vankerschaver, J."],
+      "id": "image2signalnet-2024",
+      "slug": "image2signalnet-calcium-imaging-neuronal-signals",
+      "title": "Image2SignalNet: Image-based deep learning approach for capturing neuronal signals from calcium imaging",
+      "authors": ["Jo, E.", "Shin, D. H.", "Oh, J. H.", "Cho, S.", "Lee, H. J.", "Kam, T. E."],
       "year": 2024,
-      "venue": "Bioinformatics",
+      "venue": "IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+      "venue_type": "BIBM",
+      "type": "conference",
+      "status": "published",
+      "bold_authors": [4],
+      "links": []
+    },
+    {
+      "id": "mutation-dnn-2023",
+      "slug": "mutate-observe-deep-neural-networks-mutations",
+      "title": "Mutate and observe: utilizing deep neural networks to investigate the impact of mutations on translation initiation",
+      "authors": ["Ozbulak, U.", "Lee, H. J.", "Zuallaert, J.", "De Neve, W.", "Depuydt, S.", "Vankerschaver, J."],
+      "year": 2023,
+      "venue": "Bioinformatics, 39(6), btad338",
+      "venue_type": "Bioinformatics",
       "type": "journal",
-      "venue_type": "Bioinformatics"
+      "status": "published",
+      "bold_authors": [1],
+      "links": []
     },
     {
       "id": "self-supervised-survey-2023",
@@ -66,8 +168,26 @@
       "authors": ["Ozbulak, U.", "Lee, H. J.", "Boga, B.", "Anzaku, E. T.", "Park, H.", "Van Messem, A.", "Vankerschaver, J."],
       "year": 2023,
       "venue": "Transactions on Machine Learning Research (TMLR)",
+      "venue_type": "TMLR",
       "type": "journal",
-      "venue_type": "TMLR"
+      "status": "published",
+      "bold_authors": [1],
+      "links": []
+    },
+    {
+      "id": "covo3diffusion",
+      "slug": "covo3diffusion-consistency-preserved-volume-reconstruction",
+      "title": "CoVo3Diffusion: Consistency Preserved 3D Volume Reconstruction from Sparse 2D Slices via a Diffusion Framework for Volumetric Optical Imaging",
+      "authors": ["Lee, H. J.", "Jo, E.", "Lim, M.", "Nam, H.", "Son, Y. H.", "Kam, T. E."],
+      "year": null,
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+      "venue_type": "IEEE TPAMI",
+      "type": "journal",
+      "status": "under_review",
+      "notes": "Under review in TPAMI. Year not specified in the CV.",
+      "equal_contrib": [0, 1],
+      "bold_authors": [0],
+      "links": []
     }
   ]
 }
