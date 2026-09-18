@@ -51,11 +51,12 @@
       ]
     },
     {
-      "institution": "Gent University",
+      "institution": "Universiteit Gent",
       "degree": "B.S.",
-      "field": "Bioinformatics",
+      "field": "Biotechnology",
       "year": 2022,
-      "gpa": "summa cum laude",
+      "period": "Mar 2018 – Aug 2022",
+      "honors": "Summa cum laude",
       "location": "Ghent, Belgium",
       "thesis": "Towards Robust Peritoneal Tumor Diagnosis – Deep learning-based binary classification and detection of tumors in laparoscopic videos"
     }
