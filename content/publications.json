@@ -24,7 +24,6 @@
       "venue_type": "NeurIPS",
       "type": "conference",
       "status": "under_review",
-      "notes": "Under review in the NeurIPS main track.",
       "equal_contrib": [0, 1],
       "bold_authors": [0],
       "links": []
@@ -38,7 +37,6 @@
       "venue": "NeurIPS EvoRobust workshop / ICLR main track",
       "type": "conference",
       "status": "under_review",
-      "notes": "Under review in the NeurIPS EvoRobust workshop and ICLR main track.",
       "bold_authors": [0],
       "links": []
     },
@@ -179,12 +177,11 @@
       "slug": "covo3diffusion-consistency-preserved-volume-reconstruction",
       "title": "CoVo3Diffusion: Consistency Preserved 3D Volume Reconstruction from Sparse 2D Slices via a Diffusion Framework for Volumetric Optical Imaging",
       "authors": ["Lee, H. J.", "Jo, E.", "Lim, M.", "Nam, H.", "Son, Y. H.", "Kam, T. E."],
-      "year": null,
+      "year": 2026,
       "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
       "venue_type": "IEEE TPAMI",
       "type": "journal",
       "status": "under_review",
-      "notes": "Under review in TPAMI. Year not specified in the CV.",
       "equal_contrib": [0, 1],
       "bold_authors": [0],
       "links": []

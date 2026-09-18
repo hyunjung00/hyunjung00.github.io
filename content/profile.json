@@ -23,6 +23,20 @@
   "profile_summary": "Hi! I am Hyun Jung Lee, master’s student in the AI Department at Korea University. Currently focusing on AI research, with particular interests in multimodal models, reinforcement learning, and generative methods. Passionate about applications at the intersection of medical data and multimodal learning, and exploring PhD opportunities in this field.",
   "education": [
     {
+      "institution": "University of Wisconsin–Madison",
+      "degree": "Visiting Scholar",
+      "field": "Wisconsin AI and Vision Lab (WAIV)",
+      "year": 2026,
+      "period": "Feb 2026 – Present",
+      "location": "Madison, Wisconsin, USA",
+      "host": "Prof. Yong Jae Lee",
+      "interests": [
+        "Multimodal Retrieval",
+        "Embedding Models",
+        "VLM-based Agents"
+      ]
+    },
+    {
       "institution": "Korea University",
       "degree": "M.S.",
       "field": "Artificial Intelligence",
