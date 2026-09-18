@@ -23,6 +23,8 @@ export interface Education {
   degree: string;
   field: string;
   year: number;
+  period?: string;
+  host?: string;
   gpa?: string;
   location?: string;
   interests?: string[];
