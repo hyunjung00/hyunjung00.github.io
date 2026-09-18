@@ -15,6 +15,7 @@ const EducationSchema = z.object({
   period: z.string().optional(),
   host: z.string().optional(),
   gpa: z.string().optional(),
+  honors: z.string().optional(),
   location: z.string().optional(),
   interests: z.array(z.string()).optional(),
   thesis: z.string().optional(),
