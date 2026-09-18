@@ -1,137 +1,66 @@
 import { Publication } from "@/types/cv";
 import { ExternalLink } from "lucide-react";
+import { groupPublicationsByYear, publicationYearLabel } from "@/lib/publications";
 
 interface PublicationsSectionProps {
   publications: Publication[];
 }
 
-const formatAuthors = (
-  authors: string[],
-  equalContrib?: number[],
-  bold_authors?: number[]
-) => {
-  return authors.map((author, index) => {
-    const isFirstAuthor = bold_authors?.includes(index);
-    const isEqualContrib = equalContrib?.includes(index);
-    return (
-      <span key={index} className={isFirstAuthor ? "first-author" : ""}>
-        {author}
-        {isEqualContrib && "*"}
-        {index < authors.length - 1 && ", "}
-      </span>
-    );
-  });
-};
+const formatAuthors = (authors: string[], equalContrib?: number[], boldAuthors?: number[]) =>
+  authors.map((author, index) => (
+    <span key={index} className={boldAuthors?.includes(index) ? "first-author" : ""}>
+      {author}{equalContrib?.includes(index) && "*"}
+      {index < authors.length - 1 && ", "}
+    </span>
+  ));
 
-const formatCitation = (pub: Publication) => {
-  const hasEqualContrib = pub.equal_contrib && pub.equal_contrib.length > 0;
-
-  return (
-    <div className="space-y-1">
-      <div className="publication-authors">
-        {formatAuthors(pub.authors, pub.equal_contrib, pub.bold_authors)}
-        {hasEqualContrib && (
-          <span className="text-xs text-caption ml-1">
-            (*equal contribution)
-          </span>
-        )}
-      </div>
-      <div>
-        <span className="publication-title">"{pub.title}"</span>
-      </div>
-      <div className="publication-venue">
-        {pub.venue}, {pub.year}
-      </div>
-      {pub.notes && <div className="text-sm text-caption">{pub.notes}</div>}
-    </div>
-  );
-};
-
-export function PublicationsSection({
-  publications,
-}: PublicationsSectionProps) {
+export function PublicationsSection({ publications }: PublicationsSectionProps) {
   if (publications.length === 0) return null;
-
-  // Group publications by type
-  const groupedPubs = publications.reduce((acc, pub) => {
-    const type = pub.type || "other";
-    if (!acc[type]) acc[type] = [];
-    acc[type].push(pub);
-    return acc;
-  }, {} as Record<string, Publication[]>);
-
-  const typeOrder = ["journal", "conference", "workshop", "preprint", "other"];
-  const typeLabels = {
-    journal: "Journal Articles",
-    conference: "Conference Papers",
-    workshop: "Workshop Papers",
-    preprint: "Preprints",
-    other: "Other Publications",
-  };
 
   return (
     <section className="cv-section">
       <h2 className="cv-heading">Publications</h2>
-
-      {publications.map((pub) => (
-        <div key={pub.title} className="mb-6">
-          <ol className="space-y-4">
-            <li key={pub.authors.join(",")} className="cv-content">
-              <div className="flex justify-between items-start gap-4">
-                <div className="flex-1">{formatCitation(pub)}</div>
-                {pub.link && (
-                  <a
-                    href={pub.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80 transition-colors flex items-center gap-1 text-sm no-print"
-                    aria-label={`View publication: ${pub.title}`}
-                  >
-                    <span className="hidden sm:inline">View</span>
-                    <ExternalLink className="w-4 h-4 external-link-icon" />
-                  </a>
-                )}
-              </div>
-            </li>
-          </ol>
-        </div>
-      ))}
-
-      {/* {typeOrder.map(type => {
-        const pubs = groupedPubs[type];
-        if (!pubs?.length) return null;
-        
-        return (
-          <div key={type} className="mb-6">
-            <h3 className="cv-subheading">{typeLabels[type as keyof typeof typeLabels]}</h3>
-            <ol className="space-y-4">
-              {pubs
-                .sort((a, b) => b.year - a.year)
-                .map((pub, index) => (
-                  <li key={index} className="cv-content">
-                    <div className="flex justify-between items-start gap-4">
-                      <div className="flex-1">
-                        {formatCitation(pub)}
-                      </div>
-                      {pub.link && (
-                        <a
-                          href={pub.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary hover:text-primary/80 transition-colors flex items-center gap-1 text-sm no-print"
-                          aria-label={`View publication: ${pub.title}`}
-                        >
-                          <span className="hidden sm:inline">View</span>
-                          <ExternalLink className="w-4 h-4 external-link-icon" />
-                        </a>
+      {groupPublicationsByYear(publications).map((group) => (
+        <section key={group.label} className="mb-8" aria-label={`Publications: ${group.label}`}>
+          <h3 className="cv-subheading border-b border-border-light pb-2 mb-4">
+            {publicationYearLabel(group.year)}
+          </h3>
+          <ol className="space-y-6">
+            {group.publications.map((pub) => (
+              <li key={pub.title} className="cv-content">
+                <div className="flex justify-between items-start gap-4">
+                  <div className="flex-1 space-y-1">
+                    <div className="publication-authors">
+                      {formatAuthors(pub.authors, pub.equal_contrib, pub.bold_authors)}
+                      {!!pub.equal_contrib?.length && (
+                        <span className="text-xs text-caption ml-1">(*equal contribution)</span>
                       )}
                     </div>
-                  </li>
-                ))}
-            </ol>
-          </div>
-        );
-      })} */}
+                    <div className="publication-title">"{pub.title}"</div>
+                    <div className="publication-venue">{pub.venue}</div>
+                    {pub.status && (
+                      <span className={`inline-block rounded px-2 py-0.5 text-xs font-medium ${
+                        pub.status === "under_review" ? "bg-amber-100 text-amber-800" : "bg-emerald-100 text-emerald-800"
+                      }`}>
+                        {pub.status === "under_review" ? "Under review" : "Published"}
+                      </span>
+                    )}
+                    {pub.notes && <div className="text-sm text-caption">{pub.notes}</div>}
+                  </div>
+                  {pub.link && (
+                    <a href={pub.link} target="_blank" rel="noopener noreferrer"
+                      className="text-primary hover:text-primary/80 transition-colors flex items-center gap-1 text-sm no-print"
+                      aria-label={`View publication: ${pub.title}`}>
+                      <span className="hidden sm:inline">View</span>
+                      <ExternalLink className="w-4 h-4 external-link-icon" />
+                    </a>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
     </section>
   );
 }
