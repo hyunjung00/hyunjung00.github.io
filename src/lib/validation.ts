@@ -12,6 +12,8 @@ const EducationSchema = z.object({
   degree: z.string().min(1),
   field: z.string().min(1),
   year: z.number().int().min(1900).max(new Date().getFullYear() + 10),
+  period: z.string().optional(),
+  host: z.string().optional(),
   gpa: z.string().optional(),
   location: z.string().optional(),
   interests: z.array(z.string()).optional(),
