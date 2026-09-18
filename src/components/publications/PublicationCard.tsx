@@ -2,6 +2,7 @@ import { DetailedPublication } from "@/types/content";
 import { publicationUrl } from "@/lib/utils";
 import { Link } from "react-router-dom";
 import { ExternalLink, Award, FileText } from "lucide-react";
+import { publicationYearLabel } from "@/lib/publications";
 
 interface PublicationCardProps {
   publication: DetailedPublication;
@@ -55,11 +56,11 @@ const LinkIcon = ({ type }: { type: string }) => {
   return <Icon className="w-4 h-4" />;
 };
 
-const formatAuthors = (authors: string[], equalContrib?: number[]) => {
+const formatAuthors = (authors: string[], equalContrib?: number[], boldAuthors?: number[]) => {
   return authors.map((author, index) => {
     const isEqualContrib = equalContrib?.includes(index);
     return (
-      <span key={index} className={isEqualContrib ? "equal-contrib" : ""}>
+      <span key={index} className={`${isEqualContrib ? "equal-contrib" : ""} ${boldAuthors?.includes(index) ? "first-author" : ""}`}>
         {author}
         {isEqualContrib && "*"}
         {index < authors.length - 1 && ", "}
@@ -87,7 +88,7 @@ export function PublicationCard({
               </Link>
             </h3>
             <div className="publication-authors text-sm mb-1">
-              {formatAuthors(publication.authors, publication.equal_contrib)}
+              {formatAuthors(publication.authors, publication.equal_contrib, publication.bold_authors)}
               {hasEqualContrib && (
                 <span className="text-xs text-caption ml-1">
                   (*equal contribution)
@@ -101,7 +102,7 @@ export function PublicationCard({
         {/* Publication details */}
         <div className="publication-venue text-sm">
           <span className="font-medium">{publication.venue}</span>,{" "}
-          {publication.year}
+          {publicationYearLabel(publication.year)}
           {publication.impact_factor && (
             <span className="text-caption ml-2">
               • IF: {publication.impact_factor}
@@ -113,6 +114,12 @@ export function PublicationCard({
             </span>
           )}
         </div>
+
+        {publication.status && (
+          <span className={`inline-block rounded px-2 py-0.5 text-xs font-medium ${publication.status === "under_review" ? "bg-amber-100 text-amber-800" : "bg-emerald-100 text-emerald-800"}`}>
+            {publication.status === "under_review" ? "Under review" : "Published"}
+          </span>
+        )}
 
         {/* Abstract */}
         {showAbstract && publication.abstract && (
