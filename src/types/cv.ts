@@ -7,7 +7,7 @@ export interface Contact {
 
 export interface Publication {
   authors: string[];
-  year: number;
+  year: number | null;
   title: string;
   venue: string;
   notes?: string;
@@ -15,6 +15,7 @@ export interface Publication {
   equal_contrib?: number[]; // Indices of authors with equal contribution
   type?: "journal" | "conference" | "workshop" | "preprint";
   bold_authors?: number[];
+  status?: 'published' | 'under_review';
 }
 
 export interface Education {
@@ -46,7 +47,6 @@ export interface CVProfile {
   contacts: Contact[];
   profile_summary: string;
   avatar?: string;
-  publications: Publication[];
   education: Education[];
   experience: Experience[];
   skills?: string[];

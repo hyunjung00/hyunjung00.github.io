@@ -9,15 +9,17 @@ export interface DetailedPublication {
   slug: string;
   title: string;
   authors: string[];
-  year: number;
+  year: number | null;
   venue: string;
   type: 'journal' | 'conference' | 'workshop' | 'preprint';
   links: PublicationLink[];
   notes?: string;
   equal_contrib?: number[];
+  bold_authors?: number[];
+  status?: 'published' | 'under_review';
   abstract?: string;
   keywords?: string[];
-  venue_type?: 'MICCAI' | 'ICML' | 'ICLR' | 'NeurIPS' | 'CVPR' | 'ICCV' | 'ECCV' | 'BIBM' | 'TMLR' | 'IEEE TMI' | 'Nature' | 'Science' | 'Other';
+  venue_type?: string;
   impact_factor?: string;
   citation_count?: number;
 }
