@@ -1,13 +1,10 @@
 import { Experience } from '@/types/cv';
-import { MapPin, Calendar, User } from 'lucide-react';
+import { MapPin, Calendar } from 'lucide-react';
+import { formatDateRange } from '@/lib/utils';
 
 interface ExperienceSectionProps {
   experience: Experience[];
 }
-
-const formatDateRange = (startDate: string, endDate?: string) => {
-  return `${startDate} - ${endDate || 'Present'}`;
-};
 
 export function ExperienceSection({ experience }: ExperienceSectionProps) {
   if (experience.length === 0) return null;
@@ -27,12 +24,6 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
                   <p className="text-caption flex items-center gap-1 text-sm">
                     <MapPin className="w-3 h-3" />
                     {exp.location}
-                  </p>
-                )}
-                {exp.supervisor && (
-                  <p className="text-caption flex items-center gap-1 text-sm">
-                    <User className="w-3 h-3" />
-                    Supervisor: {exp.supervisor}
                   </p>
                 )}
               </div>

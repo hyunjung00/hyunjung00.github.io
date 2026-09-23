@@ -29,7 +29,6 @@ const ExperienceSchema = z.object({
   start_date: z.string().min(1),
   end_date: z.string().optional(),
   bullets: z.array(z.string().min(1)),
-  supervisor: z.string().optional(),
 });
 
 export const CVProfileSchema = z.object({
@@ -41,9 +40,7 @@ export const CVProfileSchema = z.object({
   avatar: z.string().optional(),
   education: z.array(EducationSchema),
   experience: z.array(ExperienceSchema),
-  skills: z.array(z.string()).optional(),
   awards: z.array(z.string()).optional(),
-  languages: z.array(z.string()).optional(),
 });
 
 export function validateCVProfile(data: unknown) {

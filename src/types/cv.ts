@@ -40,7 +40,6 @@ export interface Experience {
   start_date: string;
   end_date?: string;
   bullets: string[];
-  supervisor?: string;
 }
 
 export interface CVProfile {
@@ -52,7 +51,5 @@ export interface CVProfile {
   avatar?: string;
   education: Education[];
   experience: Experience[];
-  skills?: string[];
   awards?: string[];
-  languages?: string[];
 }

@@ -1,16 +1,12 @@
 import { DetailedExperience } from "@/types/content";
-import { experienceUrl } from "@/lib/utils";
+import { experienceUrl, formatDateRange } from "@/lib/utils";
 import { Link } from "react-router-dom";
-import { MapPin, Calendar, User, Users, DollarSign } from "lucide-react";
+import { MapPin, Calendar, Users, DollarSign } from "lucide-react";
 
 interface ExperienceCardProps {
   experience: DetailedExperience;
   showDescription?: boolean;
 }
-
-const formatDateRange = (startDate: string, endDate?: string) => {
-  return `${startDate} - ${endDate || "Present"}`;
-};
 
 const calculateDuration = (startDate: string, endDate?: string) => {
   const start = new Date(startDate);
@@ -49,12 +45,6 @@ export function ExperienceCard({
                 <span className="flex items-center gap-1">
                   <MapPin className="w-3 h-3" />
                   {experience.location}
-                </span>
-              )}
-              {experience.supervisor && (
-                <span className="flex items-center gap-1">
-                  <User className="w-3 h-3" />
-                  {experience.supervisor}
                 </span>
               )}
             </div>

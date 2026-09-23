@@ -45,11 +45,7 @@ const Index = () => {
       <PublicationsSection publications={publications} />
       <EducationSection education={profile.education} />
       <ExperienceSection experience={profile.experience} />
-      <AdditionalSections 
-        skills={profile.skills}
-        awards={profile.awards}
-        languages={profile.languages}
-      />
+      <AdditionalSections awards={profile.awards} />
     </CVLayout>
   );
 };

@@ -33,7 +33,6 @@ export interface DetailedExperience {
   start_date: string;
   end_date?: string;
   bullets: string[];
-  supervisor?: string;
   description?: string;
   achievements?: string[];
   technologies?: string[];

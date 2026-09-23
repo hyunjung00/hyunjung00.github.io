@@ -55,7 +55,6 @@ const DetailedExperienceSchema = z.object({
   start_date: z.string().min(1),
   end_date: z.string().optional(),
   bullets: z.array(z.string().min(1)),
-  supervisor: z.string().optional(),
   description: z.string().optional(),
   achievements: z.array(z.string()).optional(),
   technologies: z.array(z.string()).optional(),

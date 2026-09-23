@@ -1,7 +1,7 @@
 import { DetailedExperience } from "@/types/content";
 import { validateExperience } from "@/lib/contentValidation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { experienceIndexUrl } from "@/lib/utils";
+import { experienceIndexUrl, formatDateRange } from "@/lib/utils";
 import { Navigation } from "@/components/ui/Navigation";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -9,7 +9,6 @@ import {
   ArrowLeft,
   MapPin,
   Calendar,
-  User,
   Users,
   DollarSign,
   Star,
@@ -63,10 +62,6 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
       </div>
     );
   }
-
-  const formatDateRange = (startDate: string, endDate?: string) => {
-    return `${startDate} - ${endDate || "Present"}`;
-  };
 
   const calculateDuration = (startDate: string, endDate?: string) => {
     const start = new Date(startDate);
@@ -148,13 +143,6 @@ export function ExperienceDetailPage({ slug }: ExperienceDetailPageProps) {
                     <MapPin className="w-4 h-4" />
                     <span className="font-medium">Location:</span>
                     {experience.location}
-                  </div>
-                )}
-                {experience.supervisor && (
-                  <div className="flex items-center gap-2">
-                    <User className="w-4 h-4" />
-                    <span className="font-medium">Supervisor:</span>
-                    {experience.supervisor}
                   </div>
                 )}
               </div>

@@ -40,7 +40,7 @@
       "institution": "Korea University",
       "degree": "M.S.",
       "field": "Artificial Intelligence",
-      "year": 2025,
+      "year": 2026,
       "gpa": "4.5/4.5",
       "location": "Seoul, South Korea",
       "advisor": "Prof. Dr. Tae-Eui Kam",
@@ -55,7 +55,6 @@
       "degree": "B.S.",
       "field": "Biotechnology",
       "year": 2022,
-      "period": "Mar 2018 – Aug 2022",
       "honors": "Summa cum laude",
       "location": "Ghent, Belgium",
       "thesis": "Towards Robust Peritoneal Tumor Diagnosis – Deep learning-based binary classification and detection of tumors in laparoscopic videos"
@@ -64,40 +63,25 @@
   "experience": [
     {
       "title": "Researcher",
-      "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
+      "organization": "Center for Biosystems and Biotech Data Science, Universiteit Gent",
       "start_date": "2022-10",
       "end_date": "2023-05",
       "bullets": [
         "Devised a DNA data augmentation method by mimicking silent mutation processes.",
         "Predicted DNA-to-protein translation initiation likelihood with a CNN model.",
         "Built a pre-trained CNN model for surgical datasets with self-supervised learning."
-      ],
-      "supervisor": "Prof. Dr. Joris Vankerschaver"
+      ]
     },
     {
       "title": "Intern",
-      "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
+      "organization": "Center for Biosystems and Biotech Data Science, Universiteit Gent",
       "start_date": "2021-02",
       "end_date": "2021-08",
       "bullets": [
         "Experimented on the effects of parasite infection with UMAP-based visualization.",
         "Executed point mutations in DNA and analyzed their effect on deep neural network predictions, focusing on translation initiation site prediction.",
         "Conducted research on object detection for medical image and video analysis."
-      ],
-      "supervisor": "Prof. Dr. Wesley De Neve, Prof. Dr. Utku Ozbulak"
+      ]
     }
-  ],
-  "skills": [
-    "Python",
-    "TensorFlow",
-    "PyTorch",
-    "Docker",
-    "Git",
-    "Linux",
-    "SQL"
-  ],
-  "languages": [
-    "Korean (Native)",
-    "English (Fluent)"
   ]
 }

@@ -3,12 +3,11 @@
     {
       "id": "ghent-cbbds-researcher-2022-10",
       "slug": "researcher-center-for-biosystems-and-biotech-data-science-ghent-university",
-      "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
+      "organization": "Center for Biosystems and Biotech Data Science, Universiteit Gent",
       "role": "Researcher",
       "location": "Ghent, Belgium",
       "start_date": "2022-10",
       "end_date": "2023-05",
-      "supervisor": "Prof. Dr. Joris Vankerschaver",
       "description": "Conducted research at the intersection of computational biology and medical AI, focusing on DNA sequence modeling and surgical video understanding with deep learning.",
       "bullets": [
         "Devised a DNA data augmentation method by mimicking silent mutation processes.",
@@ -26,12 +25,11 @@
     {
       "id": "ghent-cbbds-intern-2021-07",
       "slug": "intern-center-for-biosystems-and-biotech-data-science-ghent-university-2021-summer",
-      "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
+      "organization": "Center for Biosystems and Biotech Data Science, Universiteit Gent",
       "role": "Intern",
       "location": "Ghent, Belgium",
       "start_date": "2021-07",
       "end_date": "2021-08",
-      "supervisor": "Prof. Dr. Wesley De Neve",
       "description": "Summer internship focused on object detection for medical images and surgical video analytics.",
       "bullets": [
         "Conducted research on object detection for medical image and video analysis.",
@@ -47,12 +45,11 @@
     {
       "id": "ghent-brc-intern-2021-08",
       "slug": "intern-biomedical-research-center-ghent-university-2021-august",
-      "organization": "Biomedical Research Center, Ghent University",
+      "organization": "Biomedical Research Center, Universiteit Gent",
       "role": "Intern",
       "location": "Ghent, Belgium",
       "start_date": "2021-08",
       "end_date": "2021-08",
-      "supervisor": "Prof. Dr. Magdalena Radwanska",
       "description": "Explored parasitic infection effects using single-cell RNA-seq analysis and dimensionality reduction workflows.",
       "bullets": [
         "Experimented on the effects of parasite infection with UMAP-based visualization.",
@@ -68,12 +65,11 @@
     {
       "id": "ghent-cbbds-intern-2021-02",
       "slug": "intern-center-for-biosystems-and-biotech-data-science-ghent-university-2021-spring",
-      "organization": "Center for Biosystems and Biotech Data Science, Ghent University",
+      "organization": "Center for Biosystems and Biotech Data Science, Universiteit Gent",
       "role": "Intern",
       "location": "Ghent, Belgium",
       "start_date": "2021-02",
       "end_date": "2021-03",
-      "supervisor": "Prof. Dr. Utku Ozbulak",
       "description": "Applied deep learning to DNA sequence modeling; investigated model sensitivity to point mutations.",
       "bullets": [
         "Applied deep learning models for prediction and evaluation.",
