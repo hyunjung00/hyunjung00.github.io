@@ -102,7 +102,7 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
         <article className="bg-card border border-border-light rounded-lg p-6 md:p-8 hover:shadow-md transition-shadow print:border-0 print:shadow-none">
           {/* Header */}
           <header className="mb-8">
-            {publication.venue_type && (
+            {publication.status !== "under_review" && publication.venue_type && (
               <div className="mb-4">
                 <span
                   className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
@@ -136,7 +136,9 @@ export function PublicationDetailPage({ slug }: PublicationDetailPageProps) {
               </div>
 
               <div className="publication-venue text-sm">
-                <span className="font-medium">{publication.venue}</span>,{" "}
+                {publication.status !== "under_review" && publication.venue && (
+                  <><span className="font-medium">{publication.venue}</span>,{" "}</>
+                )}
                 {publicationYearLabel(publication.year)}
               </div>
 

@@ -10,7 +10,7 @@ export interface DetailedPublication {
   title: string;
   authors: string[];
   year: number | null;
-  venue: string;
+  venue?: string;
   type: 'journal' | 'conference' | 'workshop' | 'preprint';
   links: PublicationLink[];
   notes?: string;

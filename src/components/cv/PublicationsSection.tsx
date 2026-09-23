@@ -37,7 +37,9 @@ export function PublicationsSection({ publications }: PublicationsSectionProps) 
                       )}
                     </div>
                     <div className="publication-title">"{pub.title}"</div>
-                    <div className="publication-venue">{pub.venue}</div>
+                    {pub.status !== "under_review" && pub.venue && (
+                      <div className="publication-venue">{pub.venue}</div>
+                    )}
                     {pub.status === "under_review" && (
                       <span className="inline-block rounded px-2 py-0.5 text-xs font-medium bg-amber-100 text-amber-800">
                         Under review

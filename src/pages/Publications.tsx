@@ -40,7 +40,12 @@ export function PublicationsPage({ publications }: PublicationsPageProps) {
   }, [publications]);
 
   const venues = useMemo(() => {
-    const venueSet = new Set(publications.map(p => p.venue_type).filter(Boolean));
+    const venueSet = new Set(
+      publications
+        .filter(p => p.status !== 'under_review')
+        .map(p => p.venue_type)
+        .filter(Boolean)
+    );
     return Array.from(venueSet).sort();
   }, [publications]);
 

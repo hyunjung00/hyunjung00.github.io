@@ -9,7 +9,7 @@ export interface Publication {
   authors: string[];
   year: number | null;
   title: string;
-  venue: string;
+  venue?: string;
   notes?: string;
   link?: string;
   equal_contrib?: number[]; // Indices of authors with equal contribution

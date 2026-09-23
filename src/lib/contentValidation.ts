@@ -13,7 +13,7 @@ const DetailedPublicationSchema = z.object({
   title: z.string().min(1),
   authors: z.array(z.string().min(1)),
   year: z.number().int().min(1900).max(new Date().getFullYear() + 10).nullable(),
-  venue: z.string().min(1),
+  venue: z.string().min(1).optional(),
   type: z.enum(['journal', 'conference', 'workshop', 'preprint']),
   links: z.array(PublicationLinkSchema),
   notes: z.string().optional(),
@@ -25,6 +25,25 @@ const DetailedPublicationSchema = z.object({
   venue_type: z.string().min(1).optional(),
   impact_factor: z.string().optional(),
   citation_count: z.number().int().min(0).optional(),
+}).superRefine((publication, context) => {
+  if (publication.status === 'under_review') {
+    if (publication.venue || publication.venue_type) {
+      context.addIssue({
+        code: 'custom',
+        path: ['venue'],
+        message: 'Under-review publications must not expose a submission venue',
+      });
+    }
+    return;
+  }
+
+  if (!publication.venue) {
+    context.addIssue({
+      code: 'custom',
+      path: ['venue'],
+      message: 'Published publications must include a venue',
+    });
+  }
 });
 
 const DetailedExperienceSchema = z.object({

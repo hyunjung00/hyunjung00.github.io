@@ -96,12 +96,16 @@ export function PublicationCard({
               )}
             </div>
           </div>
-          <VenueBadge venueType={publication.venue_type} />
+          {publication.status !== "under_review" && (
+            <VenueBadge venueType={publication.venue_type} />
+          )}
         </div>
 
         {/* Publication details */}
         <div className="publication-venue text-sm">
-          <span className="font-medium">{publication.venue}</span>,{" "}
+          {publication.status !== "under_review" && publication.venue && (
+            <><span className="font-medium">{publication.venue}</span>,{" "}</>
+          )}
           {publicationYearLabel(publication.year)}
           {publication.impact_factor && (
             <span className="text-caption ml-2">
